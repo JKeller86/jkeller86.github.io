@@ -1,0 +1,170 @@
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  letter-spacing: 0;
+  font-weight: 900;
+  font-size: 75px;
+  line-height: 75px;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  letter-spacing: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 75px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top:70px;
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: grey;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+}
+
+.btn-default {
+	color: grey;
+	background-color: white;
+}
+
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+
+#content {
+  margin-top: 200px;
+  top: 60%;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+}
+
+.navbar-default {
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	background-color:White;
+}
+
+.navbar-header {
+	background-color:White;
+	font-family: 'Raleway', sans-serif;
+	margin: 0;
+}
+
+.navbar-static-top {
+	width: 100%;
+}
+
+.form-inline {
+  padding-top: 50px;
+  width: 100%;
+  font-size: 25px;
+  letter-spacing: 3px;
+  color: white;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+}
+
+.form-horizontal {
+  color:white;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.login {
+  padding-top: 150px;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+
+}
+
+#login {
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+#signup {
+	text-align: center;
+	padding-top: 150px;
+}
+
+#terms {
+	text-align: center;
+  padding-top: 50px;
+  text-decoration-color: white;
+}
+
+#time {
+	text-align: center;
+	padding-top: 15%;
+}
+
+.terms {
+	text-align: center;
+}
+
+#activity {
+  color:white;
+  background:none;
+  border-bottom-style: solid;
+  border-color: white;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  width: 4.25em;
+  text-align: center;
+  transition: width 150ms ease-out;
+}
+
+#length {
+  color:white;
+  background:none;  
+  border-bottom-style: solid;
+  border-color: white;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  width: 2.25em;
+  text-align: center;
+  transition: width 150ms ease-out;
+}
+
+#logbtn {
+  text-align: center;
+  margin-top: 5%;
+}
+
+#social {
+  padding-top: 2%
+}  
+
+#social-em {
+  color: white;
+}
+
+#social-tw {
+  color: white;
+}
+
+#social-fb {
+  color: white;
+}
