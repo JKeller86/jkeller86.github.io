@@ -1,30 +1,31 @@
 
 h1 {
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  letter-spacing: 0;
-  font-weight: 900;
-  font-size: 75px;
-  line-height: 75px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    letter-spacing: 0;
+    font-weight: 900;
+    font-size: 75px;
+    line-height: 75px;
 }
 
 p {
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  letter-spacing: 0;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 75px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 75px;
 }
 
 body {
-  padding-top:10%;
-  background: #333;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: grey;
-  color: #fff;
-  font-family: Raleway, sans-serif;
+    padding-top:10%;
+    padding-bottom:10%;
+    background: #333;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: grey;
+    color: #fff;
+    font-family: Raleway, sans-serif;
 }
 
 .btn-default {
@@ -33,18 +34,18 @@ body {
 }
 
 .form-group {
-  align-content: center;
+    align-content: center;
 }
 
 #video-background {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
 }
 
 video {
@@ -58,14 +59,14 @@ video {
 }
 
 #content {
-  margin-top: 200px;
-  top: 60%;
-  width: 100%;
-  font-size: 36px;
-  letter-spacing: 3px;
-  color: #fff;
-  font-family: Raleway, sans-serif;
-  text-align: center;
+    margin-top: 200px;
+    top: 60%;
+    width: 100%;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-family: Raleway, sans-serif;
+    text-align: center;
 }
 
 .navbar-default {
@@ -85,29 +86,27 @@ video {
 }
 
 .form-inline {
-  /*padding-top: 50px;*/
-  width: 100%;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: white;
-  font-family: Raleway, sans-serif;
-  text-align: center;
-  padding-top: 4em;
+    /*padding-top: 50px;*/
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+    padding-top: 4em;
 }
 
 .form-horizontal {
-  color:white;
-  font-size: 12px;
-  text-align: center;
+    color:white;
+    font-size: 12px;
+    text-align: center;
 }
 
-
 .login {
-  padding-top: 50px;
-  color: #fff;
-  font-family: Raleway, sans-serif;
-  text-align: center;
-
+    padding-top: 50px;
+    color: #fff;
+    font-family: Raleway, sans-serif;
+    text-align: center;
 }
 
 #login {
@@ -121,9 +120,9 @@ video {
 }
 
 #terms {
-	text-align: center;
-  padding-top: 50px;
-  text-decoration-color: white;
+    text-align: center;
+    padding-top: 50px;
+    text-decoration-color: white;
 }
 
 #time {
@@ -136,58 +135,58 @@ video {
 }
 
 #activity {
-  color:white;
-  background:none;
-  border-bottom-style: solid;
-  border-color: white;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  width: 4.25em;
-  text-align: center;
-  transition: width 150ms ease-out;
+    color:white;
+    background:none;
+    border-bottom-style: solid;
+    border-color: white;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    width: 4.25em;
+    text-align: center;
+    transition: width 150ms ease-out;
 }
 
 #length {
-  color:white;
-  background:none;  
-  border-bottom-style: solid;
-  border-color: white;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  width: 2.25em;
-  text-align: center;
-  transition: width 150ms ease-out;
+    color:white;
+    background:none;  
+    border-bottom-style: solid;
+    border-color: white;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    width: 2.25em;
+    text-align: center;
+    transition: width 150ms ease-out;
 }
 
 #logbtn {
-  text-align: center;
-  margin-top: 5%;
+    text-align: center;
+    margin-top: 5%;
 }
 
 #social {
-  padding-top: 2%
+    padding-top: 2%
 }  
 
 #social-em {
-  color: white;
+    color: white;
 }
 
 #social-tw {
-  color: white;
+    color: white;
 }
 
 #social-fb {
-  color: white;
+    color: white;
 }
 
 .social {
-  padding-top: 25px
+    padding-top: 25px
 }
 
 #footer {
-  font-weight: 200;
-  font-size: 10pt;
-  padding-top: 2em;
+    font-weight: 200;
+    font-size: 10pt;
+    padding-top: 2em;
 }
