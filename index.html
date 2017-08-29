@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Home</title>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-		<link rel="stylesheet" type="text/css" href="app.css">
-		<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	</head>
-	<body>
-		<div class="container"> <!-- BEGIN CONTAINER --> 
-			<div>
-				<nav class="navbar navbar-default navbar-fixed-top container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="index.html"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Workout Tracker</a>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
-							<li><a href="login.html"><i class="fa fa-user-circle" aria-hidden="true"></i> Login</a></li>
-						</ul>
-					</div>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+	<div class="container"> <!-- BEGIN CONTAINER --> 
+		<div>
+			<nav class="navbar navbar-default navbar-fixed-top container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Workout Tracker</a>
+				</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
+					<li><a href="login.html"><i class="fa fa-user-circle" aria-hidden="true"></i> Login</a></li>
+				</ul>
 			</div>
-			</nav>
+			</div>
+				</nav>
 		</div> <!-- END CONTAINER -->
-		<div class = "video" container>
-			<video autoplay loop id="video-background" muted plays-inline>
-				<source src="training.mp4" type="video/mp4">
-			</video>
-			<h1 id="time">My Workout Tracker</h1>
-			<div id="logbtn"> 
-				<button type="button" class="btn btn-default"><a href="signup.html">Get Started</a></button>
-			</div>
+	<div class = "video" container>
+		<video autoplay loop id="video-background" muted plays-inline>
+		<source src="training.mp4" type="video/mp4" poster="apphome.jpeg">
+		</video>
+		<h1 id="time">My Workout Tracker</h1>
+		<div id="logbtn"> 
+			<button type="button" class="btn btn-default"><a href="signup.html">Get Started</a></button>
 		</div>
+	</div>
+</div>
+
+<div class="container social">
+	<div class="text-center center-block">
+		<br />
+		<a href="https://www.facebook.com/jkeller86"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+		<a href="https://twitter.com/jkeller_86"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+		<a href="mailto:jkeller86@me.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+		<div>
+		<p id="footer">© Jon Keller, 2017. All Rights Reserved</p>
 		</div>
+	</div>
+</div>
 
-		<div class="container social">
-			        <div class="text-center center-block">
-			            <br />
-			                <a href="https://www.facebook.com/jkeller86"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-				            <a href="https://twitter.com/jkeller_86"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-				            <a href="mailto:jkeller86@me.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-						<div>
-							<p id="footer">© Jon Keller, 2017. All Rights Reserved</p>
-						</div>
-					</div>
+		
+		
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCDzk4tQ07IS4tojVOmGfv9atGP7eePp8w",
+    authDomain: "workout-web-app.firebaseapp.com",
+    databaseURL: "https://workout-web-app.firebaseio.com",
+    projectId: "workout-web-app",
+    storageBucket: "workout-web-app.appspot.com",
+    messagingSenderId: "1070641498190"
+  };
+  firebase.initializeApp(config);
+</script>
 
-		</div>
-
-
-
-		<script src="https://use.fontawesome.com/ad86af235e.js"></script>
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	</body>
+<script src="https://use.fontawesome.com/ad86af235e.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
 </html>
