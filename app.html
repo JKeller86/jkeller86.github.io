@@ -20,12 +20,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Workout Tracker</a>
+						<a class="navbar-brand" href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Workout Tracker</a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="logs.html"><i class="fa fa-tasks" aria-hidden="true"></i> My Logs</a></li>
-							<li><a href="login.html"><i class="fa fa-user-circle" aria-hidden="true"></i> Logout</a></li>
+							<li><a href="javascript:false" onclick="logout()"><i class="fa fa-user-circle" aria-hidden="true"></i> Logout</a></li>
 						</ul>
 					</div>
 			</div>
@@ -37,7 +37,7 @@
 			</video>
 				<h1 id="time">I just <input id="activity" value = "ran" active autofocus></input> for <input id="length" value="30" ></input> mins</h1>
 				<div id="logbtn"> 
-					<button type="button" class="btn btn-default" onclick="submitted()"><a href="app.html">Log Workout</a></button>
+					<button type="button" class="btn btn-default" onclick="logWorkout()">Log Workout</button>
 				</div>
 		</div>
 		</div>  
@@ -54,6 +54,16 @@
 		    messagingSenderId: "1070641498190"
 		  };
 		  firebase.initializeApp(config);
+
+		  function logWorkout() {
+		  	var activity = document.getElementById("activity").value
+		  	var length = document.getElementById("length").value
+
+		  	firebase.database().ref("workouts/"+window.signedInUser.uid).push({
+		  		activity:activity,length:length
+		  	})
+
+		  }
 		</script>
 		<script src="https://use.fontawesome.com/ad86af235e.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

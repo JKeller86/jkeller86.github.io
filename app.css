@@ -28,6 +28,10 @@ body {
     font-family: Raleway, sans-serif;
 }
 
+td {
+    color: grey;
+}
+
 .btn-default {
 	color: grey;
 	background-color: white;
@@ -184,6 +188,7 @@ video {
 .social {
     padding-top: 25px
 }
+
 
 #footer {
     font-weight: 200;
