@@ -47,6 +47,16 @@ body {
   z-index: -100;
 }
 
+video {
+    width:305px;
+   height:160px; 
+   background:transparent url('parrots.jpg') no-repeat 0 0;
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+   -o-background-size:cover;
+   background-size:cover;
+}
+
 #content {
   margin-top: 200px;
   top: 60%;
