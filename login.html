@@ -76,13 +76,14 @@
 	  	function authenticate() {
 	  		var email = document.getElementById('inputEmail3').value
 	  		var password = document.getElementById('inputPassword3').value
-	  		
+
 	  		firebase.auth().signInWithEmailAndPassword(email, password)
 	  			.then(function(resp) { 
 	  				console.info("Signed In. ")
 	  				window.location="app.html"
 	  			})
 	  			.catch(function(err) { console.error("Sign in failed:", err) })
+	  			alert("Sign in failed, please check your username and password and try again.")
 	  	}
 		</script>
 		<script src="https://use.fontawesome.com/ad86af235e.js"></script>

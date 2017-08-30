@@ -16,3 +16,19 @@ function logout(){
 		window.location="index.html"
 	}).catch(console.error)
 }
+
+function goToApp(){
+	window.location="app.html"
+}
+
+function goToLogs(){
+	window.location="logs.html"
+}
+
+function goToSubmission(){
+	window.location="submission.html"
+}
+
+function getStarted(){
+	window.location="signup.html"
+}
