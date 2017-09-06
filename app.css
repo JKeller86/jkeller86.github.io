@@ -24,6 +24,9 @@ body {
     color: #fff;
     font-family: Raleway, sans-serif;
 }
+a {
+    color:white;
+}
 td {
     color: grey;
 }
