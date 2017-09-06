@@ -53,7 +53,7 @@
       firebase.initializeApp(config);
 
       firebase.auth().onAuthStateChanged(function (user){
-        // var total = 0
+        var total = 0
         if (user) {
             firebase.database().ref("workouts/"+user.uid).once("value")
                 .then(function(snapshot){
