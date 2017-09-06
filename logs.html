@@ -53,6 +53,7 @@
       firebase.initializeApp(config);
 
       firebase.auth().onAuthStateChanged(function (user){
+        // var total = 0
         if (user) {
             firebase.database().ref("workouts/"+user.uid).once("value")
                 .then(function(snapshot){
@@ -67,6 +68,8 @@
                         var activityCell = newRow.insertCell(0)
                         var lengthCell = newRow.insertCell(1)
                         var lengthUnit = newRow.insertCell(2)
+                        total += log.length
+                        alert(total)
 
                         activityCell.appendChild(document.createTextNode(log.activity))
                         lengthCell.appendChild(document.createTextNode(log.length))
