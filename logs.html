@@ -67,9 +67,11 @@
 	  				
 	  					var activityCell = newRow.insertCell(0)
 	  					var lengthCell = newRow.insertCell(1)
+	  					var lengthUnit = newRow.insertCell(2)
 
 	  					activityCell.appendChild(document.createTextNode(log.activity))
-	  					lengthCell.appendChild(document.createTextNode(log.length + " minutes"))
+	  					lengthCell.appendChild(document.createTextNode(log.length))
+	  					lengthUnit.appendChild(document.createTextNode("minutes"))
 	  				})
 	  			})
 	  	}

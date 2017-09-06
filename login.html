@@ -45,13 +45,6 @@
 							<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
 						</div>
 					</div>
-<!-- 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-8">
-							<div class="checkbox">
-								<label><input type="checkbox"> Remember me</label>
-							</div>
-						</div>
-					</div> -->
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-8">
 							<button type="submit" class="btn btn-default" onclick="authenticate()">Sign in</button>
@@ -82,8 +75,7 @@
 	  				console.info("Signed In. ")
 	  				window.location="app.html"
 	  			})
-	  			.catch(function(err) { console.error("Sign in failed:", err) })
-	  			alert("Sign in failed, please check your username and password and try again.")
+	  			.catch(function(err) { alert("Sign in failed, please check your username and password.", err) })
 	  	}
 		</script>
 		<script src="https://use.fontawesome.com/ad86af235e.js"></script>
