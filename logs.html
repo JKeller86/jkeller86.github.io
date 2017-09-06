@@ -1,85 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-	<link rel="stylesheet" type="text/css" href="app.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<script type="text/javascript" src="script.js" defer></script>
+    <title>My Logs</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet" type="text/css">
+    <link href="app.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script defer src="script.js" type="text/javascript">
+    </script>
 </head>
-<body>	
-		<div class="container"> <!-- BEGIN CONTAINER -->
-			<div>
-				<nav class="navbar navbar-default navbar-fixed-top container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="app.html"><i class="fa fa-hourglass-start" aria-hidden="true"></i> Workout Tracker</a>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="app.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Log Workout</a></li>
-							<li><a href="javascript:false" onclick="logout()"><i class="fa fa-user-circle" aria-hidden="true"></i> Logout</a></li>
-						</ul>
-					</div>
-				</div> 
-			</nav>
-		</div>
+<body>
+    <div class="container">
+        <!-- BEGIN CONTAINER -->
+        <div>
+            <nav class="navbar navbar-default navbar-fixed-top container">
+                <div class="navbar-header">
+                    <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="app.html"><i aria-hidden="true" class="fa fa-hourglass-start"></i> Workout Tracker</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="app.html"><i aria-hidden="true" class="fa fa-user-plus"></i> Log Workout</a>
+                        </li>
+                        <li>
+                            <a href="javascript:false" onclick="logout()"><i aria-hidden="true" class="fa fa-user-circle"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <h1>My Logs</h1>
+        <p>Duration and Activity</p>
+        <div class="panel panel-default">
+            <table class="table" id="myLogTable"></table>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
+    </script> 
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCDzk4tQ07IS4tojVOmGfv9atGP7eePp8w",
+        authDomain: "workout-web-app.firebaseapp.com",
+        databaseURL: "https://workout-web-app.firebaseio.com",
+        projectId: "workout-web-app",
+        storageBucket: "",
+        messagingSenderId: "1070641498190"
+      };
+      firebase.initializeApp(config);
 
-<div class="container">
-<h1> My Logs </h1>
-<p>Duration and Activity</p>
-	<div class="panel panel-default">
-		<table class="table" id="myLogTable"></table>
-	</div>
-</div>
-	
-	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyCDzk4tQ07IS4tojVOmGfv9atGP7eePp8w",
-	    authDomain: "workout-web-app.firebaseapp.com",
-	    databaseURL: "https://workout-web-app.firebaseio.com",
-	    projectId: "workout-web-app",
-	    storageBucket: "",
-	    messagingSenderId: "1070641498190"
-	  };
-	  firebase.initializeApp(config);
+      firebase.auth().onAuthStateChanged(function (user){
+        if (user) {
+            firebase.database().ref("workouts/"+user.uid).once("value")
+                .then(function(snapshot){
+                    Object.keys(snapshot.val()).forEach(function(key) {
 
-	  firebase.auth().onAuthStateChanged(function (user){
-	  	if (user) {
-	  		firebase.database().ref("workouts/"+user.uid).once("value")
-	  			.then(function(snapshot){
-	  				Object.keys(snapshot.val()).forEach(function(key) {
+                        let log = snapshot.val()[key]
+                        log.activity = log.activity[0].toUpperCase() + log.activity.slice(1)
 
-	  					let log = snapshot.val()[key]
-	  					log.activity = log.activity[0].toUpperCase() + log.activity.slice(1)
+                        var logTable = document.getElementById("myLogTable")
+                        var newRow = logTable.insertRow(0)
+                    
+                        var activityCell = newRow.insertCell(0)
+                        var lengthCell = newRow.insertCell(1)
+                        var lengthUnit = newRow.insertCell(2)
 
-	  					var logTable = document.getElementById("myLogTable")
-	  					var newRow = logTable.insertRow(0)
-	  				
-	  					var activityCell = newRow.insertCell(0)
-	  					var lengthCell = newRow.insertCell(1)
-	  					var lengthUnit = newRow.insertCell(2)
+                        activityCell.appendChild(document.createTextNode(log.activity))
+                        lengthCell.appendChild(document.createTextNode(log.length))
+                        lengthUnit.appendChild(document.createTextNode("minutes"))
+                    })
+                })
+        }
+      })
 
-	  					activityCell.appendChild(document.createTextNode(log.activity))
-	  					lengthCell.appendChild(document.createTextNode(log.length))
-	  					lengthUnit.appendChild(document.createTextNode("minutes"))
-	  				})
-	  			})
-	  	}
-	  })
-
-	</script>
-	<script src="https://use.fontawesome.com/ad86af235e.js"></script>
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </script> 
+    <script src="https://use.fontawesome.com/ad86af235e.js">
+    </script> 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
+    </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
 </body>
 </html>
