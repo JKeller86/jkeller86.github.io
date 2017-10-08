@@ -7,8 +7,7 @@
     <link href="app.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <script defer src="script.js" type="text/javascript">
-    </script>
+    <script defer src="script.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="container">
@@ -35,11 +34,15 @@
         <h1>My Logs</h1>
         <p>Duration and Activity</p>
         <div class="panel panel-default">
-            <table class="table" id="myLogTable"></table>
+            <table class="table" id="myLogTable">
+            </table>
         </div>
+        	<div>
+        		<button href="javascript:false" id= "total-button" onclick="total()"><i aria-hidden="true" class="fa fa-clock-o"></i> Total All Workouts</button>
+        	</div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
-    </script> 
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script> 
     <script>
       // Initialize Firebase
       var config = {
@@ -53,7 +56,6 @@
       firebase.initializeApp(config);
 
       firebase.auth().onAuthStateChanged(function (user){
-        var total = 0
         if (user) {
             firebase.database().ref("workouts/"+user.uid).once("value")
                 .then(function(snapshot){
@@ -67,24 +69,20 @@
                     
                         var activityCell = newRow.insertCell(0)
                         var lengthCell = newRow.insertCell(1)
+                            addClass(lengthCell, "countable");
                         var lengthUnit = newRow.insertCell(2)
-                        total += log.length
-                        alert(total)
 
                         activityCell.appendChild(document.createTextNode(log.activity))
                         lengthCell.appendChild(document.createTextNode(log.length))
                         lengthUnit.appendChild(document.createTextNode("minutes"))
-                    })
+                        })
                 })
         }
-      })
 
+      })
     </script> 
-    <script src="https://use.fontawesome.com/ad86af235e.js">
-    </script> 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
-    </script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-    </script>
+    <script src="https://use.fontawesome.com/ad86af235e.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
