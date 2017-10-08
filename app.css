@@ -25,12 +25,11 @@ body {
     font-family: Raleway, sans-serif;
 }
 a {
-    color:white;
+    color: white;
 }
 td {
     color: grey;
 }
-
 .btn-default {
     color: grey;
     background-color: white;
@@ -125,12 +124,9 @@ video {
     text-align: center;
     padding-top: 20px;
 }
-
-#existing-account{  
-    padding-top:20px;
+#existing-account {
+    padding-top: 20px;
 }
-
-
 #activity {
     color: white;
     background: none;
@@ -179,7 +175,6 @@ video {
     font-size: 10pt;
     padding-top: 2em;
 }
-
 #total-button {
     font-size: 25px;
     color: grey;
