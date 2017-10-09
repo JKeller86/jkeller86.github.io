@@ -36,12 +36,15 @@
     <div class="container">
         <h1>My Logs</h1>
         <p>Duration and Activity</p>
+            <div class="total-button">
+                <button id="total-button" onclick="total()"><i aria-hidden="true" class="fa fa-clock-o"></i> Total All Workouts</button>
+            </div>
         <div class="panel panel-default">
             <table class="table" id="myLogTable"></table>
         </div>
-        <div>
+<!--         <div>
             <button id="total-button" onclick="total()"><i aria-hidden="true" class="fa fa-clock-o"></i> Total All Workouts</button>
-        </div>
+        </div> -->
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
     </script> 
