@@ -4,10 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jahnel Group AI Solutions — Custom AI Automations, Integrations & Dashboards</title>
-<meta name="description" content="Custom AI-powered automations, integrations, and dashboards built for your business. Starting at $5,000/month with a free proof of concept.">
+<meta name="description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month. Start with a free proof of concept.">
+<meta name="keywords" content="AI automation, AI workflow automation, custom AI solutions, AI business tools, AI dashboards, AI integrations, subscription AI development, AI for small business">
+<meta name="theme-color" content="#161719">
+<link rel="canonical" href="https://jkeller86.github.io/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jkeller86.github.io/">
+<meta property="og:title" content="Jahnel Group AI Solutions — Custom AI Automations, Integrations & Dashboards">
+<meta property="og:description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month. Start with a free proof of concept.">
+<meta property="og:site_name" content="Jahnel Group AI Solutions">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jahnel Group AI Solutions — Custom AI Automations & Dashboards">
+<meta name="twitter:description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -234,11 +252,12 @@ section { padding: 120px 0; }
   position: absolute;
   top: -20%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(var(--parallax-glow, 0px));
   width: 800px;
   height: 800px;
   background: radial-gradient(circle, rgba(0,189,255,0.12) 0%, transparent 70%);
   pointer-events: none;
+  will-change: transform;
 }
 .hero::after {
   content: '';
@@ -249,6 +268,8 @@ section { padding: 120px 0; }
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
+  transform: translateY(var(--parallax-grid, 0px));
+  will-change: transform;
 }
 .hero-content { position: relative; z-index: 1; max-width: 820px; }
 .hero h1 {
@@ -297,8 +318,13 @@ section { padding: 120px 0; }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #00BDFF 50%, transparent 100%);
-  opacity: 0.4;
+  background: linear-gradient(90deg, transparent 0%, transparent 30%, #00BDFF 50%, transparent 70%, transparent 100%);
+  background-size: 200% 100%;
+  animation: heroLineSweep 3s ease-in-out infinite;
+}
+@keyframes heroLineSweep {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 /* ============ HOW IT WORKS ============ */
@@ -339,8 +365,9 @@ section { padding: 120px 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  perspective: 1000px;
 }
-.deliverable-card { text-align: left; }
+.deliverable-card { text-align: left; transform-style: preserve-3d; will-change: transform; }
 .deliverable-card .icon {
   width: 48px;
   height: 48px;
@@ -677,11 +704,12 @@ section { padding: 120px 0; }
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + var(--cta-glow-y, 0px)));
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
   pointer-events: none;
+  will-change: transform;
 }
 .cta-footer .container { position: relative; z-index: 1; }
 .cta-footer h2 { color: #fff; margin-bottom: 16px; }
@@ -752,15 +780,77 @@ section { padding: 120px 0; }
   .trust-strip { flex-direction: column; gap: 6px; }
   .trust-strip .dot { display: none; }
 }
+
+/* Skip link */
+.skip-link { position: absolute; top: -100%; left: 0; padding: 12px 24px; background: #00BDFF; color: #fff; font-weight: 600; z-index: 9999; transition: top 0.3s; text-decoration: none; }
+.skip-link:focus { top: 0; }
+
+/* Screen reader only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+/* Focus visible */
+.btn:focus-visible, .nav-cta:focus-visible, a:focus-visible { outline: 2px solid #00BDFF; outline-offset: 3px; }
+.btn:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jkeller86.github.io/#organization",
+      "name": "Jahnel Group",
+      "url": "https://www.jahnelgroup.com",
+      "description": "Jahnel Group is a software development firm with 13+ years of experience and 150+ team members, offering AI-powered business solutions.",
+      "foundingDate": "2012",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 150 }
+    },
+    {
+      "@type": "Service",
+      "name": "AI Solutions Subscription",
+      "provider": { "@id": "https://jkeller86.github.io/#organization" },
+      "description": "Monthly subscription AI development service delivering custom automations, integrations, dashboards, and business tools.",
+      "serviceType": "AI Workflow Automation",
+      "areaServed": "US",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Solutions Plans",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Starter Plan", "price": "5000", "priceCurrency": "USD", "description": "Up to 2 solutions/month, 48-hour response time, dedicated team member, monthly strategy call" },
+          { "@type": "Offer", "name": "Growth Plan", "price": "8000", "priceCurrency": "USD", "description": "Up to 4 solutions/month, 24-hour response time, dedicated team member, bi-weekly strategy calls, priority support" },
+          { "@type": "Offer", "name": "Scale Plan", "price": "12000", "priceCurrency": "USD", "description": "Up to 6 solutions/month, same-day response time, dedicated team member, weekly strategy calls, concurrent workstreams" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What exactly is the free proof of concept?", "acceptedAnswer": { "@type": "Answer", "text": "We start every engagement with discovery sessions to understand your business, your tools, and where you're losing time. Then we build a working prototype that solves a real problem at no cost to you. If it's not a fit, you walk away with a free solution and zero obligation." } },
+        { "@type": "Question", "name": "What kinds of businesses is this for?", "acceptedAnswer": { "@type": "Answer", "text": "We work with small and mid-sized businesses typically 20 to 500 employees across a range of industries. If your team relies on SaaS tools, deals with manual data entry, or has workflows that feel like they should be automated, this is built for you." } },
+        { "@type": "Question", "name": "How is this different from hiring a developer?", "acceptedAnswer": { "@type": "Answer", "text": "Hiring your own development team takes time to recruit, onboard, and manage and the costs add up fast. Our model gives you a dedicated team member, continuous monthly delivery, and AI-accelerated speed all for a predictable monthly plan at a fraction of the cost." } },
+        { "@type": "Question", "name": "Can I change plans or cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can upgrade, downgrade, or cancel at any time. There are no long-term contracts. We earn your business every month." } },
+        { "@type": "Question", "name": "What tools do you integrate with?", "acceptedAnswer": { "@type": "Answer", "text": "We work with the platforms you already use QuickBooks, HubSpot, Salesforce, Slack, Google Workspace, and many more." } },
+        { "@type": "Question", "name": "What if I'm not sure where to start?", "acceptedAnswer": { "@type": "Answer", "text": "That's exactly what the free proof of concept is for. During discovery, we help you identify the highest-impact opportunities. You don't need a roadmap before you call us." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg enable-background="new 0 0 409 90" height="90" viewBox="0 0 409 90" width="409" xmlns="http://www.w3.org/2000/svg"><g fill="#f4f4f4"><path d="m243.443 22.126-.448-.9c-.146-.333-.351-.637-.601-.9-13.612-20.78-41.494-26.59-62.273-12.978-5.222 3.421-9.675 7.892-13.076 13.128-.146.333-.349.637-.6.9l-.449.9c-4.042 6.888-6.158 14.737-6.124 22.724.023 7.006 1.66 13.912 4.784 20.184l.449.899.449.899c12.044 21.633 39.344 29.406 60.977 17.36 7.289-4.059 13.303-10.069 17.361-17.36l.446-.899.449-.899c3.19-6.246 4.832-13.17 4.78-20.184.019-8.032-2.096-15.924-6.124-22.874zm-53.97 12.708h6.429v7.924c-8.97 0-11.063 0-12.409 3.439h-8.073c1.496-7.476 6.43-11.363 14.053-11.363zm17.043-14.352v32.89c0 6.278-3.289 9.867-7.924 11.512-1.121.388-2.271.688-3.439.9-1.239.174-2.487.274-3.738.3-1.351-.014-2.699-.113-4.037-.3-1.182-.142-2.339-.443-3.439-.9-5.532-1.944-8.671-6.877-8.671-16.146h7.924c-.15 8.97 3.738 10.316 8.223 10.316 4.037 0 7.326-2.395 7.326-7.179v-32.74h7.924c-.147 0-.147.449-.147 1.346h-.002zm19.734 44.551c-1.384.525-2.855.777-4.336.746h-.6c-1.443.104-2.895.104-4.336 0v-7.473c4.934 0 10.465 0 10.465-7.774s-5.233-7.774-10.465-7.774h-7.924v-7.924h12.854c4.937 0 13.153 3.289 13.153 15.548.009 9.118-4.475 13.156-8.811 14.651z"/><path d="m1.999 49.336h2.691v1.047c0 4.186 2.542 5.682 5.083 5.682 2.392 0 4.934-1.347 4.934-5.682v-17.193h-6.728v-2.392h9.42v19.734c0 5.979-3.887 8.073-7.625 8.073s-7.625-2.242-7.625-8.073v-1.2z"/><path d="m39.075 49.336h-11.063l-3.14 8.671h-2.84l10.017-27.359h2.841l10.016 27.359h-2.841zm-5.532-15.7s-.6 2.243-1.047 3.588l-3.588 9.867h9.424l-3.588-9.867c-.6-1.346-1.047-3.588-1.201-3.588z"/><path d="m50.288 30.798h2.691v12.409h15.847v-12.409h2.691v27.359h-2.691v-12.409h-16v12.409h-2.538z"/><path d="m80.039 30.798h2.542l14.053 19.585c.9 1.346 2.243 3.738 2.243 3.738h.15c-.165-1.24-.265-2.488-.3-3.738v-19.585h2.691v27.359h-2.542l-13.9-19.734c-.9-1.346-2.243-3.738-2.243-3.738h-.149c.165 1.24.265 2.488.3 3.738v19.734h-2.695v-27.359z"/><path d="m110.089 30.798h15.4v2.392h-12.709v10.017h10.316v2.391h-10.316v10.168h13.455v2.394h-16.146z"/><path d="m132.962 30.798h2.691v24.968h12.709v2.394h-15.4z"/><path d="m274.989 30.648c3.506-.116 6.942.994 9.718 3.14l-1.495 2.093c-2.369-1.779-5.261-2.725-8.223-2.691-6.578 0-11.063 5.083-11.063 11.512 0 6.728 4.635 11.661 10.914 11.661 3.287-.068 6.389-1.537 8.521-4.037v-4.485h-4.635v-2.393h7.176v13.007h-2.391v-3.289c-2.346 2.436-5.594 3.788-8.973 3.738-7.477 0-13.309-5.98-13.309-14.2-.197-7.56 5.768-13.851 13.326-14.051.148-.004.291-.006.434-.005z"/><path d="m295.62 31.246h8.073c1.729-.125 3.463.13 5.083.748 2.671 1.298 4.313 4.06 4.186 7.027 0 3.738-2.093 6.579-5.233 7.327v.149c.287.321.537.672.747 1.047l5.98 11.063h-3.136l-6.131-11.512h-6.877v11.51h-2.692zm9.269 13.306c3.289 0 5.385-2.093 5.385-5.532.146-1.952-.845-3.813-2.545-4.784-.745-.449-1.793-.6-3.887-.6h-5.531v11.065h6.578z"/><path d="m335.235 30.648c7.609-.065 13.835 6.053 13.897 13.665.001.079.001.157 0 .235.253 7.679-5.768 14.108-13.446 14.36s-14.106-5.768-14.358-13.446c-.01-.305-.01-.609 0-.914-.065-7.612 6.053-13.835 13.665-13.9.08-.001.161-.001.242 0zm0 25.864c6.13 0 11.062-5.082 11.062-11.811.247-6.11-4.507-11.263-10.616-11.509-6.108-.247-11.264 4.507-11.51 10.617-.012.297-.012.595 0 .893.005 6.728 4.938 11.81 11.064 11.81z"/><path d="m358.112 31.246h2.688v17.791c0 4.635 2.99 7.475 7.774 7.475 4.635 0 7.771-2.841 7.771-7.625v-17.641h2.691v17.791c0 6.13-4.188 10.018-10.465 10.018-6.279 0-10.465-3.889-10.465-10.018v-17.791z"/><path d="m389.657 31.246h9.419c4.934 0 8.372 3.14 8.372 8.223.21 4.414-3.197 8.162-7.61 8.372-.254.013-.508.013-.762 0h-6.729v10.765h-2.688zm9.12 14.2c3.066.234 5.746-2.064 5.979-5.134.021-.282.021-.564 0-.846 0-3.738-2.392-5.831-5.979-5.831h-6.432v11.811z"/></g></svg>
+      <svg enable-background="new 0 0 409 90" height="90" viewBox="0 0 409 90" width="409" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jahnel Group logo"><g fill="#f4f4f4"><path d="m243.443 22.126-.448-.9c-.146-.333-.351-.637-.601-.9-13.612-20.78-41.494-26.59-62.273-12.978-5.222 3.421-9.675 7.892-13.076 13.128-.146.333-.349.637-.6.9l-.449.9c-4.042 6.888-6.158 14.737-6.124 22.724.023 7.006 1.66 13.912 4.784 20.184l.449.899.449.899c12.044 21.633 39.344 29.406 60.977 17.36 7.289-4.059 13.303-10.069 17.361-17.36l.446-.899.449-.899c3.19-6.246 4.832-13.17 4.78-20.184.019-8.032-2.096-15.924-6.124-22.874zm-53.97 12.708h6.429v7.924c-8.97 0-11.063 0-12.409 3.439h-8.073c1.496-7.476 6.43-11.363 14.053-11.363zm17.043-14.352v32.89c0 6.278-3.289 9.867-7.924 11.512-1.121.388-2.271.688-3.439.9-1.239.174-2.487.274-3.738.3-1.351-.014-2.699-.113-4.037-.3-1.182-.142-2.339-.443-3.439-.9-5.532-1.944-8.671-6.877-8.671-16.146h7.924c-.15 8.97 3.738 10.316 8.223 10.316 4.037 0 7.326-2.395 7.326-7.179v-32.74h7.924c-.147 0-.147.449-.147 1.346h-.002zm19.734 44.551c-1.384.525-2.855.777-4.336.746h-.6c-1.443.104-2.895.104-4.336 0v-7.473c4.934 0 10.465 0 10.465-7.774s-5.233-7.774-10.465-7.774h-7.924v-7.924h12.854c4.937 0 13.153 3.289 13.153 15.548.009 9.118-4.475 13.156-8.811 14.651z"/><path d="m1.999 49.336h2.691v1.047c0 4.186 2.542 5.682 5.083 5.682 2.392 0 4.934-1.347 4.934-5.682v-17.193h-6.728v-2.392h9.42v19.734c0 5.979-3.887 8.073-7.625 8.073s-7.625-2.242-7.625-8.073v-1.2z"/><path d="m39.075 49.336h-11.063l-3.14 8.671h-2.84l10.017-27.359h2.841l10.016 27.359h-2.841zm-5.532-15.7s-.6 2.243-1.047 3.588l-3.588 9.867h9.424l-3.588-9.867c-.6-1.346-1.047-3.588-1.201-3.588z"/><path d="m50.288 30.798h2.691v12.409h15.847v-12.409h2.691v27.359h-2.691v-12.409h-16v12.409h-2.538z"/><path d="m80.039 30.798h2.542l14.053 19.585c.9 1.346 2.243 3.738 2.243 3.738h.15c-.165-1.24-.265-2.488-.3-3.738v-19.585h2.691v27.359h-2.542l-13.9-19.734c-.9-1.346-2.243-3.738-2.243-3.738h-.149c.165 1.24.265 2.488.3 3.738v19.734h-2.695v-27.359z"/><path d="m110.089 30.798h15.4v2.392h-12.709v10.017h10.316v2.391h-10.316v10.168h13.455v2.394h-16.146z"/><path d="m132.962 30.798h2.691v24.968h12.709v2.394h-15.4z"/><path d="m274.989 30.648c3.506-.116 6.942.994 9.718 3.14l-1.495 2.093c-2.369-1.779-5.261-2.725-8.223-2.691-6.578 0-11.063 5.083-11.063 11.512 0 6.728 4.635 11.661 10.914 11.661 3.287-.068 6.389-1.537 8.521-4.037v-4.485h-4.635v-2.393h7.176v13.007h-2.391v-3.289c-2.346 2.436-5.594 3.788-8.973 3.738-7.477 0-13.309-5.98-13.309-14.2-.197-7.56 5.768-13.851 13.326-14.051.148-.004.291-.006.434-.005z"/><path d="m295.62 31.246h8.073c1.729-.125 3.463.13 5.083.748 2.671 1.298 4.313 4.06 4.186 7.027 0 3.738-2.093 6.579-5.233 7.327v.149c.287.321.537.672.747 1.047l5.98 11.063h-3.136l-6.131-11.512h-6.877v11.51h-2.692zm9.269 13.306c3.289 0 5.385-2.093 5.385-5.532.146-1.952-.845-3.813-2.545-4.784-.745-.449-1.793-.6-3.887-.6h-5.531v11.065h6.578z"/><path d="m335.235 30.648c7.609-.065 13.835 6.053 13.897 13.665.001.079.001.157 0 .235.253 7.679-5.768 14.108-13.446 14.36s-14.106-5.768-14.358-13.446c-.01-.305-.01-.609 0-.914-.065-7.612 6.053-13.835 13.665-13.9.08-.001.161-.001.242 0zm0 25.864c6.13 0 11.062-5.082 11.062-11.811.247-6.11-4.507-11.263-10.616-11.509-6.108-.247-11.264 4.507-11.51 10.617-.012.297-.012.595 0 .893.005 6.728 4.938 11.81 11.064 11.81z"/><path d="m358.112 31.246h2.688v17.791c0 4.635 2.99 7.475 7.774 7.475 4.635 0 7.771-2.841 7.771-7.625v-17.641h2.691v17.791c0 6.13-4.188 10.018-10.465 10.018-6.279 0-10.465-3.889-10.465-10.018v-17.791z"/><path d="m389.657 31.246h9.419c4.934 0 8.372 3.14 8.372 8.223.21 4.414-3.197 8.162-7.61 8.372-.254.013-.508.013-.762 0h-6.729v10.765h-2.688zm9.12 14.2c3.066.234 5.746-2.064 5.979-5.134.021-.282.021-.564 0-.846 0-3.738-2.392-5.831-5.979-5.831h-6.432v11.811z"/></g></svg>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#how-it-works">How It Works</a></li>
@@ -770,12 +860,13 @@ section { padding: 120px 0; }
       <li><a href="#faq">FAQ</a></li>
       <li><a href="https://www.jahnelgroup.com/contact" class="nav-cta">Book Your Free POC</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
+<main id="main-content">
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="container hero-content">
@@ -978,12 +1069,13 @@ section { padding: 120px 0; }
     <!-- Comparison Table -->
     <div class="comparison-wrapper reveal">
       <table class="comparison-table">
+        <caption class="sr-only">Feature comparison across Starter, Growth, and Scale plans</caption>
         <thead>
           <tr>
-            <th>Feature</th>
-            <th>Starter</th>
-            <th class="highlight">Growth</th>
-            <th>Scale</th>
+            <th scope="col">Feature</th>
+            <th scope="col">Starter</th>
+            <th scope="col" class="highlight">Growth</th>
+            <th scope="col">Scale</th>
           </tr>
         </thead>
         <tbody>
@@ -1148,6 +1240,7 @@ section { padding: 120px 0; }
     <div class="domain reveal reveal-delay-3">jahnelgroup.com</div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER BAR -->
 <footer class="footer-bar">
@@ -1181,8 +1274,9 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
+  const isOpen = hamburger.classList.toggle('active');
   navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
 });
 
 // Close mobile nav on link click
@@ -1217,6 +1311,96 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Hero parallax
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const hero = document.querySelector('.hero');
+  let ticking = false;
+  function updateHeroParallax() {
+    const scrollY = window.scrollY;
+    if (scrollY > hero.offsetHeight * 1.2) { ticking = false; return; }
+    hero.style.setProperty('--parallax-grid', scrollY * 0.4 + 'px');
+    hero.style.setProperty('--parallax-glow', scrollY * 0.6 + 'px');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateHeroParallax); ticking = true; }
+  }, { passive: true });
+})();
+
+// Stat counter animation
+(function() {
+  const statCards = document.querySelectorAll('.stat-number');
+  let animated = false;
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+  function animateCounter(el) {
+    const text = el.textContent.trim();
+    const match = text.match(/^(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1], 10);
+    const suffix = text.replace(/^\d+/, '');
+    const duration = 1500;
+    const startTime = performance.now();
+    el.textContent = '0' + suffix;
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.round(target * easeOutQuart(progress));
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        statCards.forEach(el => animateCounter(el));
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  statCards.forEach(el => statsObserver.observe(el));
+})();
+
+// Card tilt effect
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const cards = document.querySelectorAll('.deliverable-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 3;
+      const rotateX = ((rect.height / 2 - y) / (rect.height / 2)) * 3;
+      card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+// CTA glow parallax
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const ctaSection = document.querySelector('.cta-footer');
+  let ticking = false;
+  function updateCtaGlow() {
+    const rect = ctaSection.getBoundingClientRect();
+    const vh = window.innerHeight;
+    if (rect.bottom < 0 || rect.top > vh) { ticking = false; return; }
+    const progress = Math.max(0, Math.min(1, 1 - (rect.top / vh)));
+    ctaSection.style.setProperty('--cta-glow-y', (20 - progress * 40) + 'px');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateCtaGlow); ticking = true; }
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
