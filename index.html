@@ -3,59 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Capabilities | Jahnel Group</title>
-<meta name="description" content="Jahnel Group partners with forward-thinking organizations to design, build, and scale AI-powered solutions that reduce cost, accelerate decisions, and eliminate manual bottlenecks.">
+<title>Jahnel Group AI Solutions — Custom AI Automations, Integrations & Dashboards</title>
+<meta name="description" content="Custom AI-powered automations, integrations, and dashboards built for your business. Starting at $5,000/month with a free proof of concept.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  background: #161719;
-  color: #F4F4F4;
   font-family: 'Libre Franklin', sans-serif;
   font-size: 17px;
   line-height: 1.7;
-  font-weight: 400;
+  color: #FAFAFA;
+  background: #161719;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; }
-h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
-h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
-p { color: #ccc; }
-a { color: #00BDFF; text-decoration: none; transition: color 0.3s ease; }
+h1, h2, h3, h4 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #F4F4F4;
+}
+
+h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+
+a { color: #00BDFF; text-decoration: none; transition: color 0.3s; }
 a:hover { color: #F4F4F4; }
 
-/* ===== UTILITIES ===== */
+img { max-width: 100%; display: block; }
+
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Section label badges */
 .section-label {
   display: inline-block;
-  font-family: 'Libre Franklin', sans-serif;
+  padding: 6px 18px;
+  border-radius: 100px;
+  text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: #00BDFF;
-  margin-bottom: 16px;
-  padding: 6px 16px;
   border: 1px solid rgba(0,189,255,0.3);
-  border-radius: 100px;
+  background: rgba(0,189,255,0.06);
+  margin-bottom: 20px;
 }
-.section-heading { color: #FAFAFA; margin-bottom: 20px; }
-.section-sub { max-width: 680px; font-size: 1.1rem; color: #999; margin-bottom: 60px; }
-.accent { color: #00BDFF; }
 
-/* ===== SCROLL ANIMATIONS ===== */
+.section-sub {
+  font-size: 1.1rem;
+  color: #999;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-weight: 300;
+}
+
+section { padding: 120px 0; }
+
+/* Card pattern */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.4s, box-shadow 0.4s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,189,255,0.25);
+  box-shadow: 0 8px 40px rgba(0,189,255,0.08);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: #fff;
+  color: #161719;
+}
+.btn-primary:hover {
+  background: #e0e0e0;
+  color: #161719;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255,255,255,0.12);
+}
+.btn-secondary {
+  background: transparent;
+  color: #00BDFF;
+  border: 1px solid rgba(0,189,255,0.5);
+}
+.btn-secondary:hover {
+  border-color: #00BDFF;
+  background: rgba(0,189,255,0.08);
+  color: #F4F4F4;
+  transform: translateY(-2px);
+}
+.btn-cyan {
+  background: #00BDFF;
+  color: #fff;
+}
+.btn-cyan:hover {
+  background: #0089D0;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,189,255,0.25);
+}
+
+/* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .reveal.visible {
   opacity: 1;
@@ -66,718 +142,1081 @@ a:hover { color: #F4F4F4; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ===== NAV ===== */
+/* ============ NAVIGATION ============ */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 24px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-  background: transparent;
+  padding: 18px 0;
+  transition: all 0.4s;
 }
 .nav.scrolled {
   background: rgba(22,23,25,0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  padding: 12px 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 }
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
-.nav-logo svg { height: 32px; width: auto; display: block; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-logo svg { height: 36px; width: auto; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
 .nav-links a {
-  font-size: 0.82rem;
+  color: #ccc;
+  font-size: 0.88rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #999;
-  transition: color 0.3s ease;
-  position: relative;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
 }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00BDFF;
-  transition: width 0.3s ease;
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  padding: 8px 20px !important;
+  background: #00BDFF !important;
+  color: #fff !important;
+  border-radius: 100px;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: background 0.3s, transform 0.3s !important;
 }
-.nav-links a:hover { color: #F4F4F4; }
-.nav-links a:hover::after { width: 100%; }
-.nav-mobile-toggle {
+.nav-cta:hover {
+  background: #0089D0 !important;
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
   display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
   background: none;
   border: none;
-  cursor: pointer;
-  padding: 8px;
+  padding: 4px;
 }
-.nav-mobile-toggle span {
+.hamburger span {
   display: block;
   width: 24px;
   height: 2px;
   background: #F4F4F4;
-  margin: 5px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
-@media (max-width: 768px) {
-  .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; background: rgba(22,23,25,0.98); backdrop-filter: blur(16px); padding: 24px; gap: 20px; }
-  .nav-links.open { display: flex; }
-  .nav-mobile-toggle { display: block; }
-}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ===== HERO ===== */
+/* ============ HERO ============ */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 140px 0 100px;
 }
-.hero-bg {
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0,189,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(0,189,255,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(0,137,208,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(0,189,255,0.04) 0%, transparent 60%);
-  animation: heroGlow 8s ease-in-out infinite alternate;
-}
-@keyframes heroGlow {
-  0% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 0.7; transform: scale(1.02); }
-}
-.hero-grid-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
   background-image:
-    linear-gradient(rgba(0,189,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,189,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  pointer-events: none;
 }
-.hero .container { position: relative; z-index: 1; }
-.hero-badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #00BDFF;
-  padding: 8px 20px;
-  border: 1px solid rgba(0,189,255,0.35);
-  border-radius: 100px;
-  margin-bottom: 32px;
-  background: rgba(0,189,255,0.06);
+.hero-content { position: relative; z-index: 1; max-width: 820px; }
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  margin-bottom: 24px;
 }
-.hero h1 { color: #FAFAFA; margin-bottom: 28px; max-width: 800px; }
-.hero h1 span { display: block; background: linear-gradient(135deg, #00BDFF, #0089D0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero h1 .gradient {
+  background: linear-gradient(135deg, #00BDFF 0%, #0089D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .hero-sub {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: 1.15rem;
   color: #bbb;
   max-width: 640px;
-  margin-bottom: 20px;
-  line-height: 1.8;
+  margin: 0 auto 16px;
+  font-weight: 300;
 }
 .hero-supporting {
   font-size: 1rem;
   color: #777;
-  max-width: 580px;
   font-style: italic;
+  margin-bottom: 36px;
 }
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #666;
+}
+.trust-strip .dot { color: #444; }
 .hero-line {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #00BDFF, transparent);
-  margin-top: 48px;
-  border-radius: 2px;
-}
-
-/* ===== SECTION SPACING ===== */
-section { padding: 120px 0; }
-
-/* ===== CORE CAPABILITIES ===== */
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-@media (max-width: 960px) { .capabilities-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .capabilities-grid { grid-template-columns: 1fr; } }
-.cap-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 36px 28px;
-  transition: border-color 0.4s ease, transform 0.4s ease, background 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-.cap-card::before {
-  content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #00BDFF, transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  background: linear-gradient(90deg, transparent 0%, #00BDFF 50%, transparent 100%);
+  opacity: 0.4;
 }
-.cap-card:hover {
-  border-color: rgba(0,189,255,0.2);
-  transform: translateY(-4px);
-  background: rgba(0,189,255,0.03);
-}
-.cap-card:hover::before { opacity: 1; }
-.cap-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 24px;
-  color: #00BDFF;
-}
-.cap-icon svg { width: 100%; height: 100%; }
-.cap-card h3 { color: #FAFAFA; margin-bottom: 14px; text-transform: none; font-family: 'Libre Franklin', sans-serif; font-weight: 600; font-size: 1.15rem; letter-spacing: 0; }
-.cap-card p { font-size: 1rem; color: #999; line-height: 1.65; }
 
-/* ===== INDUSTRY SHOWCASE ===== */
-.showcase-section { background: rgba(255,255,255,0.015); }
-.industry-block { margin-bottom: 48px; }
-.industry-block:last-child { margin-bottom: 0; }
-.industry-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-  cursor: default;
-}
-.industry-header h3 {
-  color: #FAFAFA;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.industry-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00BDFF;
-  flex-shrink: 0;
-}
-.industry-items {
+/* ============ HOW IT WORKS ============ */
+#how-it-works { text-align: center; }
+.steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 16px;
-  padding-left: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
 }
-@media (max-width: 560px) { .industry-items { grid-template-columns: 1fr; padding-left: 0; } }
-.industry-item {
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 24px 28px;
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-.industry-item:hover {
-  border-color: rgba(0,189,255,0.15);
-  background: rgba(0,189,255,0.025);
-}
-.industry-item h4 {
-  color: #F4F4F4;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-bottom: 8px;
-}
-.industry-item p { font-size: 1rem; color: #888; line-height: 1.6; }
-.industry-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-  margin: 48px 0;
-}
-
-/* ===== TECH STACK ===== */
-.tech-group { margin-bottom: 36px; }
-.tech-group-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #666;
+.step-card { text-align: left; }
+.step-number {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.5rem;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
   margin-bottom: 16px;
 }
-.tech-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.tech-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 22px;
+.step-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.step-card .step-badge {
+  display: inline-block;
+  padding: 3px 12px;
   border-radius: 100px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-.tech-pill.primary {
-  background: rgba(0,189,255,0.1);
-  border: 1px solid rgba(0,189,255,0.25);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   color: #00BDFF;
+  border: 1px solid rgba(0,189,255,0.3);
+  background: rgba(0,189,255,0.06);
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
-.tech-pill.primary:hover {
-  background: rgba(0,189,255,0.18);
-  border-color: rgba(0,189,255,0.5);
-  transform: translateY(-2px);
-}
-.tech-pill.secondary {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: #aaa;
-}
-.tech-pill.secondary:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.15);
-  color: #F4F4F4;
-  transform: translateY(-2px);
-}
+.step-card p { color: #999; font-size: 0.95rem; font-weight: 300; }
 
-/* ===== RESULTS ===== */
-.results-grid {
+/* ============ WHAT YOU GET ============ */
+#what-you-get { text-align: center; }
+.deliverables-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-@media (max-width: 768px) { .results-grid { grid-template-columns: 1fr; } }
-.result-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 44px 32px;
-  text-align: center;
-  transition: border-color 0.4s ease, transform 0.4s ease;
-  position: relative;
-}
-.result-card:hover {
-  border-color: rgba(0,189,255,0.2);
-  transform: translateY(-4px);
-}
-.result-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 28px;
+.deliverable-card { text-align: left; }
+.deliverable-card .icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
   color: #00BDFF;
+}
+.deliverable-card .icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: #00BDFF;
+  stroke-width: 1.5;
+  fill: none;
+}
+.deliverable-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.deliverable-card p { color: #999; font-size: 0.92rem; font-weight: 300; }
+
+/* ============ WHY JAHNEL GROUP ============ */
+#why-jahnel-group {
+  background: rgba(255,255,255,0.015);
+}
+.advantage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.value-blocks { display: flex; flex-direction: column; gap: 36px; }
+.value-block { display: flex; gap: 20px; align-items: flex-start; }
+.value-block .vb-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: rgba(0,189,255,0.08);
-  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 4px;
 }
-.result-icon svg { width: 28px; height: 28px; }
-.result-card h3 {
-  color: #FAFAFA;
+.value-block .vb-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #00BDFF;
+  stroke-width: 1.5;
+  fill: none;
+}
+.value-block h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.value-block p { color: #999; font-size: 0.92rem; font-weight: 300; }
+
+.cost-card {
+  background: #1e2024;
+  border-left: 3px solid #00BDFF;
+  border-radius: 16px;
+  padding: 40px;
+}
+.cost-card .section-label { margin-bottom: 28px; }
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.cost-row:last-of-type { border-bottom: none; }
+.cost-row .label { color: #ccc; font-size: 0.95rem; }
+.cost-row .price-old {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 1.1rem;
+}
+.cost-row .price-new {
+  color: #00BDFF;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.cost-bottom {
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ============ PRICING ============ */
+#pricing { text-align: center; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 72px;
+}
+.pricing-card {
+  text-align: left;
+  position: relative;
+}
+.pricing-card.featured {
+  border-color: rgba(0,189,255,0.35);
+  box-shadow: 0 0 40px rgba(0,189,255,0.1);
+  transform: scale(1.03);
+  border-top: 3px solid #00BDFF;
+}
+.pricing-card.featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: #00BDFF;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.pricing-card h3 { font-size: 1.3rem; margin-bottom: 16px; }
+.pricing-price {
+  margin-bottom: 4px;
+}
+.pricing-price .amount {
   font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #F4F4F4;
+}
+.pricing-price .period {
+  color: #888;
+  font-size: 0.95rem;
+}
+.pricing-annual {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.pricing-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 24px;
+}
+.pricing-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.pricing-features li {
+  padding: 6px 0;
+  color: #ccc;
+  font-size: 0.92rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pricing-features li::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2300BDFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+  flex-shrink: 0;
+}
+.pricing-card .btn { width: 100%; text-align: center; }
+.pricing-card { display: flex; flex-direction: column; }
+.pricing-card .pricing-features { flex: 1; }
+.pricing-grid { align-items: stretch; }
+
+/* Comparison table */
+.comparison-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 24px;
+}
+.comparison-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 24px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  color: #ccc;
+}
+.comparison-table thead th {
+  background: rgba(255,255,255,0.03);
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  color: #F4F4F4;
+}
+.comparison-table thead th.highlight {
+  background: rgba(0,189,255,0.08);
+  color: #00BDFF;
+}
+.comparison-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.015);
+}
+.comparison-table .check { color: #00BDFF; font-weight: 600; }
+.comparison-table .dash { color: #444; }
+.comparison-table td { color: #ccc; font-weight: 300; }
+.comparison-note {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 16px;
+}
+
+/* ============ ABOUT ============ */
+#about { text-align: center; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+.stat-card { text-align: center; }
+.stat-card .stat-number {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #00BDFF 0%, #0089D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.stat-card .stat-label {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.about-text {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #999;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ============ FAQ ============ */
+#faq { text-align: center; }
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: rgba(255,255,255,0.1); }
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  gap: 16px;
+  user-select: none;
+}
+.faq-question h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 1.15rem;
   text-transform: none;
   letter-spacing: 0;
-  margin-bottom: 14px;
+  line-height: 1.4;
+  color: #F4F4F4;
 }
-.result-card p { font-size: 1rem; color: #999; line-height: 1.65; }
+.faq-toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #888;
+  transition: all 0.3s;
+}
+.faq-item.active .faq-toggle {
+  color: #00BDFF;
+  border-color: rgba(0,189,255,0.3);
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.4s;
+}
+.faq-item.active .faq-answer {
+  max-height: 400px;
+}
+.faq-answer p {
+  padding: 0 24px 20px;
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
 
-/* ===== CTA FOOTER ===== */
+/* ============ CTA FOOTER ============ */
 .cta-footer {
-  padding: 100px 0 80px;
-  background: linear-gradient(135deg, #0089D0 0%, #006aa8 40%, #004f80 100%);
   text-align: center;
+  background: linear-gradient(135deg, #0089D0 0%, #006aa8 40%, #004f80 100%);
   position: relative;
   overflow: hidden;
 }
 .cta-footer::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,189,255,0.15), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 .cta-footer .container { position: relative; z-index: 1; }
-.cta-footer h2 { color: #FAFAFA; margin-bottom: 20px; }
-.cta-footer p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin-bottom: 40px; }
-.cta-btn {
-  display: inline-block;
-  padding: 16px 44px;
-  background: #FAFAFA;
-  color: #161719;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 100px;
-  letter-spacing: 0.04em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
+.cta-footer h2 { color: #fff; margin-bottom: 16px; }
+.cta-footer p {
+  color: rgba(255,255,255,0.8);
+  max-width: 580px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  font-size: 1.05rem;
 }
-.cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-  color: #161719;
-}
-.cta-domain {
-  margin-top: 48px;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.08em;
+.cta-footer .domain {
+  margin-top: 28px;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
 }
 
-/* ===== FOOTER BAR ===== */
+/* ============ FOOTER BAR ============ */
 .footer-bar {
-  padding: 28px 0;
   text-align: center;
+  padding: 32px 0;
   border-top: 1px solid rgba(255,255,255,0.05);
+  color: #666;
+  font-size: 0.85rem;
 }
-.footer-bar p { font-size: 0.8rem; color: #555; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-card.featured { transform: scale(1); }
+  .pricing-card.featured:hover { transform: translateY(-4px); }
+  .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(22,23,25,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    padding: 24px;
+  }
+  .nav-links.open { right: 0; }
+  .hamburger { display: flex; }
+
+  .steps-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .deliverables-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .advantage-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero { padding: 120px 0 80px; min-height: auto; }
+}
+
+@media (max-width: 560px) {
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-buttons .btn { width: 100%; max-width: 320px; text-align: center; }
+  .trust-strip { flex-direction: column; gap: 6px; }
+  .trust-strip .dot { display: none; }
+}
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
+<!-- NAVIGATION -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo" aria-label="Jahnel Group">
+    <a href="#" class="nav-logo">
       <svg enable-background="new 0 0 409 90" height="90" viewBox="0 0 409 90" width="409" xmlns="http://www.w3.org/2000/svg"><g fill="#f4f4f4"><path d="m243.443 22.126-.448-.9c-.146-.333-.351-.637-.601-.9-13.612-20.78-41.494-26.59-62.273-12.978-5.222 3.421-9.675 7.892-13.076 13.128-.146.333-.349.637-.6.9l-.449.9c-4.042 6.888-6.158 14.737-6.124 22.724.023 7.006 1.66 13.912 4.784 20.184l.449.899.449.899c12.044 21.633 39.344 29.406 60.977 17.36 7.289-4.059 13.303-10.069 17.361-17.36l.446-.899.449-.899c3.19-6.246 4.832-13.17 4.78-20.184.019-8.032-2.096-15.924-6.124-22.874zm-53.97 12.708h6.429v7.924c-8.97 0-11.063 0-12.409 3.439h-8.073c1.496-7.476 6.43-11.363 14.053-11.363zm17.043-14.352v32.89c0 6.278-3.289 9.867-7.924 11.512-1.121.388-2.271.688-3.439.9-1.239.174-2.487.274-3.738.3-1.351-.014-2.699-.113-4.037-.3-1.182-.142-2.339-.443-3.439-.9-5.532-1.944-8.671-6.877-8.671-16.146h7.924c-.15 8.97 3.738 10.316 8.223 10.316 4.037 0 7.326-2.395 7.326-7.179v-32.74h7.924c-.147 0-.147.449-.147 1.346h-.002zm19.734 44.551c-1.384.525-2.855.777-4.336.746h-.6c-1.443.104-2.895.104-4.336 0v-7.473c4.934 0 10.465 0 10.465-7.774s-5.233-7.774-10.465-7.774h-7.924v-7.924h12.854c4.937 0 13.153 3.289 13.153 15.548.009 9.118-4.475 13.156-8.811 14.651z"/><path d="m1.999 49.336h2.691v1.047c0 4.186 2.542 5.682 5.083 5.682 2.392 0 4.934-1.347 4.934-5.682v-17.193h-6.728v-2.392h9.42v19.734c0 5.979-3.887 8.073-7.625 8.073s-7.625-2.242-7.625-8.073v-1.2z"/><path d="m39.075 49.336h-11.063l-3.14 8.671h-2.84l10.017-27.359h2.841l10.016 27.359h-2.841zm-5.532-15.7s-.6 2.243-1.047 3.588l-3.588 9.867h9.424l-3.588-9.867c-.6-1.346-1.047-3.588-1.201-3.588z"/><path d="m50.288 30.798h2.691v12.409h15.847v-12.409h2.691v27.359h-2.691v-12.409h-16v12.409h-2.538z"/><path d="m80.039 30.798h2.542l14.053 19.585c.9 1.346 2.243 3.738 2.243 3.738h.15c-.165-1.24-.265-2.488-.3-3.738v-19.585h2.691v27.359h-2.542l-13.9-19.734c-.9-1.346-2.243-3.738-2.243-3.738h-.149c.165 1.24.265 2.488.3 3.738v19.734h-2.695v-27.359z"/><path d="m110.089 30.798h15.4v2.392h-12.709v10.017h10.316v2.391h-10.316v10.168h13.455v2.394h-16.146z"/><path d="m132.962 30.798h2.691v24.968h12.709v2.394h-15.4z"/><path d="m274.989 30.648c3.506-.116 6.942.994 9.718 3.14l-1.495 2.093c-2.369-1.779-5.261-2.725-8.223-2.691-6.578 0-11.063 5.083-11.063 11.512 0 6.728 4.635 11.661 10.914 11.661 3.287-.068 6.389-1.537 8.521-4.037v-4.485h-4.635v-2.393h7.176v13.007h-2.391v-3.289c-2.346 2.436-5.594 3.788-8.973 3.738-7.477 0-13.309-5.98-13.309-14.2-.197-7.56 5.768-13.851 13.326-14.051.148-.004.291-.006.434-.005z"/><path d="m295.62 31.246h8.073c1.729-.125 3.463.13 5.083.748 2.671 1.298 4.313 4.06 4.186 7.027 0 3.738-2.093 6.579-5.233 7.327v.149c.287.321.537.672.747 1.047l5.98 11.063h-3.136l-6.131-11.512h-6.877v11.51h-2.692zm9.269 13.306c3.289 0 5.385-2.093 5.385-5.532.146-1.952-.845-3.813-2.545-4.784-.745-.449-1.793-.6-3.887-.6h-5.531v11.065h6.578z"/><path d="m335.235 30.648c7.609-.065 13.835 6.053 13.897 13.665.001.079.001.157 0 .235.253 7.679-5.768 14.108-13.446 14.36s-14.106-5.768-14.358-13.446c-.01-.305-.01-.609 0-.914-.065-7.612 6.053-13.835 13.665-13.9.08-.001.161-.001.242 0zm0 25.864c6.13 0 11.062-5.082 11.062-11.811.247-6.11-4.507-11.263-10.616-11.509-6.108-.247-11.264 4.507-11.51 10.617-.012.297-.012.595 0 .893.005 6.728 4.938 11.81 11.064 11.81z"/><path d="m358.112 31.246h2.688v17.791c0 4.635 2.99 7.475 7.774 7.475 4.635 0 7.771-2.841 7.771-7.625v-17.641h2.691v17.791c0 6.13-4.188 10.018-10.465 10.018-6.279 0-10.465-3.889-10.465-10.018v-17.791z"/><path d="m389.657 31.246h9.419c4.934 0 8.372 3.14 8.372 8.223.21 4.414-3.197 8.162-7.61 8.372-.254.013-.508.013-.762 0h-6.729v10.765h-2.688zm9.12 14.2c3.066.234 5.746-2.064 5.979-5.134.021-.282.021-.564 0-.846 0-3.738-2.392-5.831-5.979-5.831h-6.432v11.811z"/></g></svg>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#capabilities">Capabilities</a></li>
-      <li><a href="#showcase">Showcase</a></li>
-      <li><a href="#tech">Tech Stack</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#what-you-get">What You Get</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://www.jahnelgroup.com/contact" class="nav-cta">Book Your Free POC</a></li>
     </ul>
-    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid-overlay"></div>
-  <div class="container">
-    <div class="hero-badge reveal">AI Capabilities Overview</div>
-    <h1 class="reveal reveal-delay-1">From AI Ambition to<span>Production Reality</span></h1>
-    <p class="hero-sub reveal reveal-delay-2">We partner with forward-thinking organizations to design, build, and scale AI-powered solutions that reduce cost, accelerate decisions, and eliminate manual bottlenecks.</p>
-    <p class="hero-supporting reveal reveal-delay-3">From intelligent agents to advanced analytics, we deliver production-ready AI systems &mdash; not just prototypes.</p>
-    <div class="hero-line reveal reveal-delay-4"></div>
+  <div class="container hero-content">
+    <div class="section-label reveal">AI-Powered Solutions for Growing Businesses</div>
+    <h1 class="reveal reveal-delay-1">Your Team Is Buried in Manual Work.<br><span class="gradient">AI Can Fix That.</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">Custom AI-powered automations, integrations, and dashboards &mdash; built for your business, delivered every month, starting with a free proof of concept.</p>
+    <p class="hero-supporting reveal reveal-delay-2">Starting at $5,000/month &mdash; for a fraction of the cost of hiring your own development team.</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-primary">Get Your Free Proof of Concept</a>
+      <a href="#pricing" class="btn btn-secondary">See Pricing</a>
+    </div>
+    <div class="trust-strip reveal reveal-delay-4">
+      <span>13 Years in Business</span><span class="dot">&middot;</span>
+      <span>150+ Team Members</span><span class="dot">&middot;</span>
+      <span>No Cost to Start</span><span class="dot">&middot;</span>
+      <span>Cancel Anytime</span>
+    </div>
   </div>
+  <div class="hero-line"></div>
 </section>
 
-<!-- ===== CORE CAPABILITIES ===== -->
-<section id="capabilities">
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
   <div class="container">
-    <div class="section-label reveal">What We Do</div>
-    <h2 class="section-heading reveal">Core Capabilities</h2>
-    <p class="section-sub reveal">End-to-end AI services from strategy through production deployment.</p>
-    <div class="capabilities-grid">
-      <!-- Card 1 -->
-      <div class="cap-card reveal reveal-delay-1">
-        <div class="cap-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5v1.5h2a4 4 0 0 1 4 4v1H4v-1a4 4 0 0 1 4-4h2V9.5A4 4 0 0 1 8 6a4 4 0 0 1 4-4z"/><circle cx="12" cy="6" r="1.5"/><line x1="4" y1="20" x2="20" y2="20"/><line x1="8" y1="20" x2="8" y2="22"/><line x1="16" y1="20" x2="16" y2="22"/></svg>
-        </div>
-        <h3>AI Agents & Automation</h3>
-        <p>Intelligent assistants and voice agents that streamline workflows and customer interactions.</p>
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="reveal">From First Conversation to Working Solution in Days</h2>
+    <p class="section-sub reveal">We start every engagement with a free proof of concept. No contracts, no cost, no strings attached.</p>
+    <div class="steps-grid">
+      <div class="card step-card reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <h3>Discovery Session</h3>
+        <p>We meet with your team to understand your business, identify pain points, and pinpoint the highest-impact automation opportunity.</p>
       </div>
-      <!-- Card 2 -->
-      <div class="cap-card reveal reveal-delay-2">
-        <div class="cap-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Data & Machine Learning</h3>
-        <p>Transform raw data into predictive insights with custom models and analytics pipelines.</p>
+      <div class="card step-card reveal reveal-delay-2">
+        <div class="step-number">02</div>
+        <h3>Free Proof of Concept</h3>
+        <div class="step-badge">$0 Investment</div>
+        <p>Within days, we build a working prototype specific to your business &mdash; at no cost. You see exactly what we can do before you spend a dollar.</p>
       </div>
-      <!-- Card 3 -->
-      <div class="cap-card reveal reveal-delay-3">
-        <div class="cap-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="13" y2="13"/></svg>
-        </div>
-        <h3>LLM & Generative AI</h3>
-        <p>Custom-tuned language models powering enterprise search, summarization, and decision support.</p>
+      <div class="card step-card reveal reveal-delay-3">
+        <div class="step-number">03</div>
+        <h3>Monthly Delivery Plan</h3>
+        <div class="step-badge">Cancel Anytime</div>
+        <p>Love the results? Choose a monthly delivery plan that fits. We continuously build, improve, and support your solutions month after month.</p>
       </div>
-      <!-- Card 4 -->
-      <div class="cap-card reveal reveal-delay-4">
-        <div class="cap-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <h3>AI Strategy & Enablement</h3>
-        <p>From discovery to deployment &mdash; turning AI roadmaps into measurable ROI.</p>
-      </div>
+    </div>
+    <div class="reveal">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-cyan">Get Your Free Proof of Concept</a>
     </div>
   </div>
 </section>
 
-<!-- ===== INDUSTRY SHOWCASE ===== -->
-<section class="showcase-section" id="showcase">
+<!-- WHAT YOU GET -->
+<section id="what-you-get">
   <div class="container">
-    <div class="section-label reveal">Industry Experience</div>
-    <h2 class="section-heading reveal">What We've Built</h2>
-    <p class="section-sub reveal">Production AI systems delivering measurable impact across regulated and high-complexity industries.</p>
-
-    <!-- Pharmaceuticals -->
-    <div class="industry-block reveal">
-      <div class="industry-header">
-        <div class="industry-dot"></div>
-        <h3>Pharmaceuticals & Biotechnology</h3>
+    <div class="section-label reveal">What You Get</div>
+    <h2 class="reveal">Solutions That Work as Hard as Your Team</h2>
+    <p class="section-sub reveal">Every month, your plan delivers real, working tools with AI built in &mdash; not slide decks or strategy documents. We help you adopt AI responsibly and in a way that can transform your business.</p>
+    <div class="deliverables-grid">
+      <div class="card deliverable-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="20" x2="12" y2="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="20" x2="6" y2="14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI-Powered Data &amp; Reporting</h3>
+        <p>Transform, migrate, and visualize your data with AI-powered reporting pipelines that surface insights automatically.</p>
       </div>
-      <div class="industry-items">
-        <div class="industry-item">
-          <h4>AI-Driven Regulatory Intelligence</h4>
-          <p>Custom-built assistants accelerating document review and regulatory cross-referencing.</p>
-        </div>
-        <div class="industry-item">
-          <h4>Operational & Patient Journey Insights</h4>
-          <p>Analytics surfacing opportunities across the patient lifecycle.</p>
-        </div>
+      <div class="card deliverable-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="21" x2="9" y2="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Intelligent Dashboards</h3>
+        <p>Real-time, AI-enhanced reporting and visibility into the metrics that matter to your business.</p>
       </div>
-    </div>
-
-    <div class="industry-divider"></div>
-
-    <!-- Healthcare -->
-    <div class="industry-block reveal">
-      <div class="industry-header">
-        <div class="industry-dot"></div>
-        <h3>Healthcare & Revenue Cycle Management</h3>
+      <div class="card deliverable-card reveal reveal-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI Workflow Automation</h3>
+        <p>Replace manual data entry, copy-paste routines, and repetitive handoffs with intelligent, AI-driven automation.</p>
       </div>
-      <div class="industry-items">
-        <div class="industry-item">
-          <h4>AI Voice Agents for Patient Access</h4>
-          <p>Automated call triage for intake, routing, and patient needs assessment.</p>
-        </div>
-        <div class="industry-item">
-          <h4>Revenue Intelligence & Automation</h4>
-          <p>Systems that process operational data and optimize billing workflows.</p>
-        </div>
-        <div class="industry-item">
-          <h4>AI-Enabled Cloud Platforms</h4>
-          <p>Healthcare applications embedding AI for real-time operational insights.</p>
-        </div>
+      <div class="card deliverable-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="12" x2="22" y2="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Integrations &amp; MCP Servers</h3>
+        <p>Connect your CRM, accounting, marketing, and operations platforms so data flows automatically.</p>
       </div>
-    </div>
-
-    <div class="industry-divider"></div>
-
-    <!-- Financial Services -->
-    <div class="industry-block reveal">
-      <div class="industry-header">
-        <div class="industry-dot"></div>
-        <h3>Financial Services & Insurance</h3>
+      <div class="card deliverable-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Smart Alerts &amp; Notifications</h3>
+        <p>Automated alerts when deals stall, thresholds are hit, tasks go overdue, or data looks off.</p>
       </div>
-      <div class="industry-items">
-        <div class="industry-item">
-          <h4>Advanced Financial Modeling</h4>
-          <p>Underwriting and forecasting models for investment and risk analysis.</p>
-        </div>
-        <div class="industry-item">
-          <h4>Data Pipeline & Reporting Automation</h4>
-          <p>Automated data extraction replacing legacy manual reporting.</p>
-        </div>
-        <div class="industry-item">
-          <h4>Enterprise AI Assistants</h4>
-          <p>Internal copilots with guardrails for knowledge access and productivity.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="industry-divider"></div>
-
-    <!-- Public Sector -->
-    <div class="industry-block reveal">
-      <div class="industry-header">
-        <div class="industry-dot"></div>
-        <h3>Public Sector, Media & AI Platforms</h3>
-      </div>
-      <div class="industry-items">
-        <div class="industry-item">
-          <h4>Document AI & Fraud Detection</h4>
-          <p>Intelligent document processing that eliminates manual review bottlenecks.</p>
-        </div>
-        <div class="industry-item">
-          <h4>AI Evaluation & Agent Frameworks</h4>
-          <p>Evaluation frameworks and knowledge systems for scaling AI reliably.</p>
-        </div>
-        <div class="industry-item">
-          <h4>Personalization & Recommendation</h4>
-          <p>ML models driving engagement through tailored content and predictions.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="industry-divider"></div>
-
-    <!-- E-Commerce -->
-    <div class="industry-block reveal">
-      <div class="industry-header">
-        <div class="industry-dot"></div>
-        <h3>E-Commerce & Retail</h3>
-      </div>
-      <div class="industry-items">
-        <div class="industry-item">
-          <h4>Predictive Analytics & Forecasting</h4>
-          <p>ML models for demand forecasting, pricing, and operational optimization.</p>
-        </div>
-        <div class="industry-item">
-          <h4>AI-Powered Decision Support</h4>
-          <p>Dashboards surfacing pricing, inventory, and margin opportunities in real time.</p>
-        </div>
+      <div class="card deliverable-card reveal reveal-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="17" x2="8" y2="17" stroke-linecap="round" stroke-linejoin="round"/><polyline points="10 9 9 9 8 9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI Business Tools</h3>
+        <p>Purpose-built tools tailored to how your team works &mdash; lead trackers, approval systems, intake forms &mdash; all with AI baked in.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TECHNOLOGY STACK ===== -->
-<section id="tech">
+<!-- WHY JAHNEL GROUP -->
+<section id="why-jahnel-group">
   <div class="container">
-    <div class="section-label reveal">Tools & Platforms</div>
-    <h2 class="section-heading reveal">Technology Stack</h2>
-    <p class="section-sub reveal">Battle-tested tools and frameworks powering our AI delivery.</p>
-
-    <div class="tech-group reveal">
-      <div class="tech-group-label">Primary</div>
-      <div class="tech-pills">
-        <span class="tech-pill primary">Claude</span>
-        <span class="tech-pill primary">OpenAI</span>
-        <span class="tech-pill primary">Gemini</span>
-        <span class="tech-pill primary">LangChain</span>
-        <span class="tech-pill primary">AWS Bedrock</span>
-        <span class="tech-pill primary">Python</span>
-      </div>
+    <div style="text-align:center">
+      <div class="section-label reveal">The Advantage</div>
+      <h2 class="reveal">One Subscription. Dozens of Solutions.</h2>
+      <p class="section-sub reveal">We don't just build with AI &mdash; we help you leverage AI across your business. Every solution we deliver is designed to help your team adopt AI responsibly and unlock real transformation.</p>
     </div>
-
-    <div class="tech-group reveal reveal-delay-1">
-      <div class="tech-group-label">Supporting</div>
-      <div class="tech-pills">
-        <span class="tech-pill secondary">Prompt Engineering</span>
-        <span class="tech-pill secondary">LLM Integrations</span>
-        <span class="tech-pill secondary">Document AI</span>
-        <span class="tech-pill secondary">Data Pipelines</span>
-        <span class="tech-pill secondary">Custom Evaluation Frameworks</span>
-        <span class="tech-pill secondary">Temporal</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== RESULTS ===== -->
-<section id="results">
-  <div class="container">
-    <div class="section-label reveal">Impact</div>
-    <h2 class="section-heading reveal">Why It Works</h2>
-    <p class="section-sub reveal">Real outcomes from production AI systems.</p>
-
-    <div class="results-grid">
-      <div class="result-card reveal reveal-delay-1">
-        <div class="result-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    <div class="advantage-grid">
+      <div class="value-blocks">
+        <div class="value-block reveal reveal-delay-1">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>A Fraction of the Cost</h3>
+            <p>Hiring your own development team costs a fortune. Our plans start at $5,000/month and deliver comparable output through AI-accelerated development &mdash; without the overhead.</p>
+          </div>
         </div>
-        <h3>Accelerated Time-to-Value</h3>
-        <p>From idea to production faster with proven AI delivery frameworks.</p>
-      </div>
-      <div class="result-card reveal reveal-delay-2">
-        <div class="result-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <div class="value-block reveal reveal-delay-2">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>No Hiring, No Overhead</h3>
+            <p>Skip the recruiting, onboarding, benefits, and management. Get a productive team from day one.</p>
+          </div>
         </div>
-        <h3>Operational Efficiency Gains</h3>
-        <p>Automate manual processes and reclaim hundreds of hours per quarter.</p>
-      </div>
-      <div class="result-card reveal reveal-delay-3">
-        <div class="result-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <div class="value-block reveal reveal-delay-3">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 6 23 6 23 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>Deepening Expertise</h3>
+            <p>Your dedicated team member learns your business over time and proactively suggests improvements &mdash; like having an in-house developer without the in-house cost.</p>
+          </div>
         </div>
-        <h3>Scalable, Production-Ready AI</h3>
-        <p>Built for real-world use &mdash; enterprise-grade systems, not experiments.</p>
+      </div>
+      <div class="cost-card reveal reveal-delay-2">
+        <div class="section-label">Cost Comparison</div>
+        <div class="cost-row">
+          <span class="label">Full-Time Developer</span>
+          <span class="price-old">$24,000/mo</span>
+        </div>
+        <div class="cost-row">
+          <span class="label">Jahnel Group Starter</span>
+          <span class="price-new">$5,000/mo</span>
+        </div>
+        <div class="cost-bottom">Up to 80% less than traditional hiring</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA FOOTER ===== -->
-<section class="cta-footer" id="contact">
+<!-- PRICING -->
+<section id="pricing">
   <div class="container">
-    <h2 class="reveal">Ready to Put AI to Work?</h2>
-    <p class="reveal reveal-delay-1">Let's identify your highest-impact AI opportunity.</p>
-    <a href="https://www.jahnelgroup.com/contact" class="cta-btn reveal reveal-delay-2">Start the Conversation</a>
-    <div class="cta-domain reveal reveal-delay-3">jahnelgroup.com</div>
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="reveal">Simple, Predictable Pricing</h2>
+    <p class="section-sub reveal">Choose the plan that fits your needs. Upgrade, downgrade, or cancel anytime.</p>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="card pricing-card reveal reveal-delay-1">
+        <h3>Starter</h3>
+        <div class="pricing-price"><span class="amount">$5,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$60,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 2 solutions/month</li>
+          <li>48-hour response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Monthly strategy call</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-secondary">Get Started</a>
+      </div>
+      <!-- Growth -->
+      <div class="card pricing-card featured reveal reveal-delay-2">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Growth</h3>
+        <div class="pricing-price"><span class="amount">$8,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$96,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 4 solutions/month</li>
+          <li>24-hour response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-cyan">Get Started</a>
+      </div>
+      <!-- Scale -->
+      <div class="card pricing-card reveal reveal-delay-3">
+        <h3>Scale</h3>
+        <div class="pricing-price"><span class="amount">$12,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$144,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 6 solutions/month</li>
+          <li>Same-day response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Weekly strategy calls</li>
+          <li>Concurrent workstreams</li>
+          <li>Proactive recommendations</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-wrapper reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="highlight">Growth</th>
+            <th>Scale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly Investment</td>
+            <td>$5,000</td>
+            <td>$8,000</td>
+            <td>$12,000</td>
+          </tr>
+          <tr>
+            <td>Solutions per Month</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Response Time</td>
+            <td>48 hours</td>
+            <td>24 hours</td>
+            <td>Same day</td>
+          </tr>
+          <tr>
+            <td>Strategy Cadence</td>
+            <td>Monthly</td>
+            <td>Bi-weekly</td>
+            <td>Weekly</td>
+          </tr>
+          <tr>
+            <td>Dedicated Team Member</td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Client Portal</td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Priority Support</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Concurrent Workstreams</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Proactive Recommendations</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="comparison-note reveal">All plans include a free proof of concept. No long-term contracts required.</p>
   </div>
 </section>
 
-<!-- ===== FOOTER BAR ===== -->
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">About Jahnel Group</div>
+    <h2 class="reveal">Built on 13 Years of Delivery Excellence</h2>
+    <p class="section-sub reveal">The AI Solutions Division is powered by Jahnel Group, a proven software development firm trusted by organizations of all sizes.</p>
+    <div class="stats-grid">
+      <div class="card stat-card reveal reveal-delay-1">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="card stat-card reveal reveal-delay-2">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="card stat-card reveal reveal-delay-3">
+        <div class="stat-number">4&ndash;5x</div>
+        <div class="stat-label">Output vs. Traditional Dev</div>
+      </div>
+    </div>
+    <p class="about-text reveal">We've spent over a decade building custom software for enterprise clients. Our AI Solutions Division applies that same rigor and reliability to a new model: subscription-based AI development that makes custom solutions accessible to growing businesses for the first time.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label reveal">FAQ</div>
+    <h2 class="reveal">Common Questions</h2>
+    <p class="section-sub reveal">&nbsp;</p>
+    <div class="faq-list">
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question">
+          <h3>What exactly is the free proof of concept?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We start every engagement with discovery sessions to understand your business, your tools, and where you're losing time. Then we build a working prototype that solves a real problem &mdash; at no cost to you. If it's not a fit, you walk away with a free solution and zero obligation.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question">
+          <h3>What kinds of businesses is this for?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We work with small and mid-sized businesses &mdash; typically 20 to 500 employees &mdash; across a range of industries. If your team relies on SaaS tools, deals with manual data entry, or has workflows that feel like they should be automated, this is built for you.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question">
+          <h3>How is this different from hiring a developer?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Hiring your own development team takes time to recruit, onboard, and manage &mdash; and the costs add up fast. Our model gives you a dedicated team member, continuous monthly delivery, and AI-accelerated speed &mdash; all for a predictable monthly plan at a fraction of the cost.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question">
+          <h3>Can I change plans or cancel?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. You can upgrade, downgrade, or cancel at any time. There are no long-term contracts. We earn your business every month.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question">
+          <h3>What tools do you integrate with?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We work with the platforms you already use &mdash; QuickBooks, HubSpot, Salesforce, Slack, Google Workspace, and many more.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question">
+          <h3>What if I'm not sure where to start?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>That's exactly what the free proof of concept is for. During discovery, we help you identify the highest-impact opportunities. You don't need a roadmap before you call us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-footer">
+  <div class="container">
+    <h2 class="reveal">Let's Find Your Highest-Value Automation &mdash; For Free</h2>
+    <p class="reveal reveal-delay-1">Book a discovery session and we'll build a working proof of concept for your business at no cost. No pitch deck. No pressure. Just a real solution.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-primary">Start Your Free Proof of Concept</a>
+    </div>
+    <div class="domain reveal reveal-delay-3">jahnelgroup.com</div>
+  </div>
+</section>
+
+<!-- FOOTER BAR -->
 <footer class="footer-bar">
-  <p>&copy; 2026 Jahnel Group. All rights reserved.</p>
+  <div class="container">&copy; 2026 Jahnel Group. All rights reserved.</div>
 </footer>
 
-<!-- ===== MINIMAL JS ===== -->
 <script>
-// Intersection Observer for scroll reveal animations
-(function() {
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Nav scroll effect
-  var nav = document.getElementById('nav');
-  var lastScroll = 0;
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+// Intersection Observer for reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
-    lastScroll = window.scrollY;
-  }, { passive: true });
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  // Mobile nav toggle
-  var toggle = document.getElementById('navToggle');
-  var links = document.getElementById('navLinks');
-  toggle.addEventListener('click', function() {
-    links.classList.toggle('open');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// Mobile nav toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
   });
-  // Close mobile nav on link click
-  links.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      links.classList.remove('open');
-    });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const wasActive = item.classList.contains('active');
+    // Close all
+    document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+    // Open clicked if it wasn't active
+    if (!wasActive) item.classList.add('active');
   });
-})();
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = nav.offsetHeight + 20;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
 </script>
 </body>
 </html>
