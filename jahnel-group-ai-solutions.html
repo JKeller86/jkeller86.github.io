@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jahnel Group AI Solutions — Custom AI Automations, Integrations & Dashboards</title>
+<meta name="description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month. Start with a free proof of concept.">
+<meta name="keywords" content="AI automation, AI workflow automation, custom AI solutions, AI business tools, AI dashboards, AI integrations, subscription AI development, AI for small business">
+<meta name="theme-color" content="#161719">
+<link rel="canonical" href="https://jkeller86.github.io/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jkeller86.github.io/">
+<meta property="og:title" content="Jahnel Group AI Solutions — Custom AI Automations, Integrations & Dashboards">
+<meta property="og:description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month. Start with a free proof of concept.">
+<meta property="og:site_name" content="Jahnel Group AI Solutions">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jahnel Group AI Solutions — Custom AI Automations & Dashboards">
+<meta name="twitter:description" content="Custom AI workflow automations, integrations, and dashboards for small and mid-sized businesses. Subscription plans from $5,000/month.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #FAFAFA;
+  background: #161719;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #F4F4F4;
+}
+
+h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+
+a { color: #00BDFF; text-decoration: none; transition: color 0.3s; }
+a:hover { color: #F4F4F4; }
+
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Section label badges */
+.section-label {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #00BDFF;
+  border: 1px solid rgba(0,189,255,0.3);
+  background: rgba(0,189,255,0.06);
+  margin-bottom: 20px;
+}
+
+.section-sub {
+  font-size: 1.1rem;
+  color: #999;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-weight: 300;
+}
+
+section { padding: 120px 0; }
+
+/* Card pattern */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.4s, box-shadow 0.4s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,189,255,0.25);
+  box-shadow: 0 8px 40px rgba(0,189,255,0.08);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: #fff;
+  color: #161719;
+}
+.btn-primary:hover {
+  background: #e0e0e0;
+  color: #161719;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255,255,255,0.12);
+}
+.btn-secondary {
+  background: transparent;
+  color: #00BDFF;
+  border: 1px solid rgba(0,189,255,0.5);
+}
+.btn-secondary:hover {
+  border-color: #00BDFF;
+  background: rgba(0,189,255,0.08);
+  color: #F4F4F4;
+  transform: translateY(-2px);
+}
+.btn-cyan {
+  background: #00BDFF;
+  color: #fff;
+}
+.btn-cyan:hover {
+  background: #0089D0;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,189,255,0.25);
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============ NAVIGATION ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: all 0.4s;
+}
+.nav.scrolled {
+  background: rgba(22,23,25,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.nav-logo svg { height: 36px; width: auto; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: #ccc;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  padding: 8px 20px !important;
+  background: #00BDFF !important;
+  color: #fff !important;
+  border-radius: 100px;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: background 0.3s, transform 0.3s !important;
+}
+.nav-cta:hover {
+  background: #0089D0 !important;
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #F4F4F4;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 100px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--parallax-glow, 0px));
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0,189,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  will-change: transform;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  transform: translateY(var(--parallax-grid, 0px));
+  will-change: transform;
+}
+.hero-content { position: relative; z-index: 1; max-width: 820px; }
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  margin-bottom: 24px;
+}
+.hero h1 .gradient {
+  background: linear-gradient(135deg, #00BDFF 0%, #0089D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  color: #bbb;
+  max-width: 640px;
+  margin: 0 auto 16px;
+  font-weight: 300;
+}
+.hero-supporting {
+  font-size: 1rem;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 36px;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #666;
+}
+.trust-strip .dot { color: #444; }
+.hero-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, transparent 30%, #00BDFF 50%, transparent 70%, transparent 100%);
+  background-size: 200% 100%;
+  animation: heroLineSweep 3s ease-in-out infinite;
+}
+@keyframes heroLineSweep {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ============ HOW IT WORKS ============ */
+#how-it-works { text-align: center; }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+.step-card { text-align: left; }
+.step-number {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.5rem;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.step-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.step-card .step-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #00BDFF;
+  border: 1px solid rgba(0,189,255,0.3);
+  background: rgba(0,189,255,0.06);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.step-card p { color: #999; font-size: 0.95rem; font-weight: 300; }
+
+/* ============ WHAT YOU GET ============ */
+#what-you-get { text-align: center; }
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  perspective: 1000px;
+}
+.deliverable-card { text-align: left; transform-style: preserve-3d; will-change: transform; }
+.deliverable-card .icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: #00BDFF;
+}
+.deliverable-card .icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: #00BDFF;
+  stroke-width: 1.5;
+  fill: none;
+}
+.deliverable-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.deliverable-card p { color: #999; font-size: 0.92rem; font-weight: 300; }
+
+/* ============ WHY JAHNEL GROUP ============ */
+#why-jahnel-group {
+  background: rgba(255,255,255,0.015);
+}
+.advantage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.value-blocks { display: flex; flex-direction: column; gap: 36px; }
+.value-block { display: flex; gap: 20px; align-items: flex-start; }
+.value-block .vb-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0,189,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+.value-block .vb-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #00BDFF;
+  stroke-width: 1.5;
+  fill: none;
+}
+.value-block h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.value-block p { color: #999; font-size: 0.92rem; font-weight: 300; }
+
+.cost-card {
+  background: #1e2024;
+  border-left: 3px solid #00BDFF;
+  border-radius: 16px;
+  padding: 40px;
+}
+.cost-card .section-label { margin-bottom: 28px; }
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.cost-row:last-of-type { border-bottom: none; }
+.cost-row .label { color: #ccc; font-size: 0.95rem; }
+.cost-row .price-old {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 1.1rem;
+}
+.cost-row .price-new {
+  color: #00BDFF;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.cost-bottom {
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ============ PRICING ============ */
+#pricing { text-align: center; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 72px;
+}
+.pricing-card {
+  text-align: left;
+  position: relative;
+}
+.pricing-card.featured {
+  border-color: rgba(0,189,255,0.35);
+  box-shadow: 0 0 40px rgba(0,189,255,0.1);
+  transform: scale(1.03);
+  border-top: 3px solid #00BDFF;
+}
+.pricing-card.featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: #00BDFF;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.pricing-card h3 { font-size: 1.3rem; margin-bottom: 16px; }
+.pricing-price {
+  margin-bottom: 4px;
+}
+.pricing-price .amount {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #F4F4F4;
+}
+.pricing-price .period {
+  color: #888;
+  font-size: 0.95rem;
+}
+.pricing-annual {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.pricing-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 24px;
+}
+.pricing-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.pricing-features li {
+  padding: 6px 0;
+  color: #ccc;
+  font-size: 0.92rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pricing-features li::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2300BDFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+  flex-shrink: 0;
+}
+.pricing-card .btn { width: 100%; text-align: center; }
+.pricing-card { display: flex; flex-direction: column; }
+.pricing-card .pricing-features { flex: 1; }
+.pricing-grid { align-items: stretch; }
+
+/* Comparison table */
+.comparison-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 24px;
+}
+.comparison-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 24px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  color: #ccc;
+}
+.comparison-table thead th {
+  background: rgba(255,255,255,0.03);
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  color: #F4F4F4;
+}
+.comparison-table thead th.highlight {
+  background: rgba(0,189,255,0.08);
+  color: #00BDFF;
+}
+.comparison-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.015);
+}
+.comparison-table .check { color: #00BDFF; font-weight: 600; }
+.comparison-table .dash { color: #444; }
+.comparison-table td { color: #ccc; font-weight: 300; }
+.comparison-note {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 16px;
+}
+
+/* ============ ABOUT ============ */
+#about { text-align: center; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+.stat-card { text-align: center; }
+.stat-card .stat-number {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #00BDFF 0%, #0089D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.stat-card .stat-label {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.about-text {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #999;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ============ FAQ ============ */
+#faq { text-align: center; }
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: rgba(255,255,255,0.1); }
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  gap: 16px;
+  user-select: none;
+}
+.faq-question h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: #F4F4F4;
+}
+.faq-toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #888;
+  transition: all 0.3s;
+}
+.faq-item.active .faq-toggle {
+  color: #00BDFF;
+  border-color: rgba(0,189,255,0.3);
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.4s;
+}
+.faq-item.active .faq-answer {
+  max-height: 400px;
+}
+.faq-answer p {
+  padding: 0 24px 20px;
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ============ CTA FOOTER ============ */
+.cta-footer {
+  text-align: center;
+  background: linear-gradient(135deg, #0089D0 0%, #006aa8 40%, #004f80 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cta-footer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + var(--cta-glow-y, 0px)));
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  will-change: transform;
+}
+.cta-footer .container { position: relative; z-index: 1; }
+.cta-footer h2 { color: #fff; margin-bottom: 16px; }
+.cta-footer p {
+  color: rgba(255,255,255,0.8);
+  max-width: 580px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  font-size: 1.05rem;
+}
+.cta-footer .domain {
+  margin-top: 28px;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+/* ============ FOOTER BAR ============ */
+.footer-bar {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-card.featured { transform: scale(1); }
+  .pricing-card.featured:hover { transform: translateY(-4px); }
+  .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(22,23,25,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    padding: 24px;
+  }
+  .nav-links.open { right: 0; }
+  .hamburger { display: flex; }
+
+  .steps-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .deliverables-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .advantage-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero { padding: 120px 0 80px; min-height: auto; }
+}
+
+@media (max-width: 560px) {
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-buttons .btn { width: 100%; max-width: 320px; text-align: center; }
+  .trust-strip { flex-direction: column; gap: 6px; }
+  .trust-strip .dot { display: none; }
+}
+
+/* Skip link */
+.skip-link { position: absolute; top: -100%; left: 0; padding: 12px 24px; background: #00BDFF; color: #fff; font-weight: 600; z-index: 9999; transition: top 0.3s; text-decoration: none; }
+.skip-link:focus { top: 0; }
+
+/* Screen reader only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+/* Focus visible */
+.btn:focus-visible, .nav-cta:focus-visible, a:focus-visible { outline: 2px solid #00BDFF; outline-offset: 3px; }
+.btn:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jkeller86.github.io/#organization",
+      "name": "Jahnel Group",
+      "url": "https://www.jahnelgroup.com",
+      "description": "Jahnel Group is a software development firm with 13+ years of experience and 150+ team members, offering AI-powered business solutions.",
+      "foundingDate": "2012",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 150 }
+    },
+    {
+      "@type": "Service",
+      "name": "AI Solutions Subscription",
+      "provider": { "@id": "https://jkeller86.github.io/#organization" },
+      "description": "Monthly subscription AI development service delivering custom automations, integrations, dashboards, and business tools.",
+      "serviceType": "AI Workflow Automation",
+      "areaServed": "US",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Solutions Plans",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Starter Plan", "price": "5000", "priceCurrency": "USD", "description": "Up to 2 solutions/month, 48-hour response time, dedicated team member, monthly strategy call" },
+          { "@type": "Offer", "name": "Growth Plan", "price": "8000", "priceCurrency": "USD", "description": "Up to 4 solutions/month, 24-hour response time, dedicated team member, bi-weekly strategy calls, priority support" },
+          { "@type": "Offer", "name": "Scale Plan", "price": "12000", "priceCurrency": "USD", "description": "Up to 6 solutions/month, same-day response time, dedicated team member, weekly strategy calls, concurrent workstreams" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What exactly is the free proof of concept?", "acceptedAnswer": { "@type": "Answer", "text": "We start every engagement with discovery sessions to understand your business, your tools, and where you're losing time. Then we build a working prototype that solves a real problem at no cost to you. If it's not a fit, you walk away with a free solution and zero obligation." } },
+        { "@type": "Question", "name": "What kinds of businesses is this for?", "acceptedAnswer": { "@type": "Answer", "text": "We work with small and mid-sized businesses typically 20 to 500 employees across a range of industries. If your team relies on SaaS tools, deals with manual data entry, or has workflows that feel like they should be automated, this is built for you." } },
+        { "@type": "Question", "name": "How is this different from hiring a developer?", "acceptedAnswer": { "@type": "Answer", "text": "Hiring your own development team takes time to recruit, onboard, and manage and the costs add up fast. Our model gives you a dedicated team member, continuous monthly delivery, and AI-accelerated speed all for a predictable monthly plan at a fraction of the cost." } },
+        { "@type": "Question", "name": "Can I change plans or cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can upgrade, downgrade, or cancel at any time. There are no long-term contracts. We earn your business every month." } },
+        { "@type": "Question", "name": "What tools do you integrate with?", "acceptedAnswer": { "@type": "Answer", "text": "We work with the platforms you already use QuickBooks, HubSpot, Salesforce, Slack, Google Workspace, and many more." } },
+        { "@type": "Question", "name": "What if I'm not sure where to start?", "acceptedAnswer": { "@type": "Answer", "text": "That's exactly what the free proof of concept is for. During discovery, we help you identify the highest-impact opportunities. You don't need a roadmap before you call us." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg enable-background="new 0 0 409 90" height="90" viewBox="0 0 409 90" width="409" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jahnel Group logo"><g fill="#f4f4f4"><path d="m243.443 22.126-.448-.9c-.146-.333-.351-.637-.601-.9-13.612-20.78-41.494-26.59-62.273-12.978-5.222 3.421-9.675 7.892-13.076 13.128-.146.333-.349.637-.6.9l-.449.9c-4.042 6.888-6.158 14.737-6.124 22.724.023 7.006 1.66 13.912 4.784 20.184l.449.899.449.899c12.044 21.633 39.344 29.406 60.977 17.36 7.289-4.059 13.303-10.069 17.361-17.36l.446-.899.449-.899c3.19-6.246 4.832-13.17 4.78-20.184.019-8.032-2.096-15.924-6.124-22.874zm-53.97 12.708h6.429v7.924c-8.97 0-11.063 0-12.409 3.439h-8.073c1.496-7.476 6.43-11.363 14.053-11.363zm17.043-14.352v32.89c0 6.278-3.289 9.867-7.924 11.512-1.121.388-2.271.688-3.439.9-1.239.174-2.487.274-3.738.3-1.351-.014-2.699-.113-4.037-.3-1.182-.142-2.339-.443-3.439-.9-5.532-1.944-8.671-6.877-8.671-16.146h7.924c-.15 8.97 3.738 10.316 8.223 10.316 4.037 0 7.326-2.395 7.326-7.179v-32.74h7.924c-.147 0-.147.449-.147 1.346h-.002zm19.734 44.551c-1.384.525-2.855.777-4.336.746h-.6c-1.443.104-2.895.104-4.336 0v-7.473c4.934 0 10.465 0 10.465-7.774s-5.233-7.774-10.465-7.774h-7.924v-7.924h12.854c4.937 0 13.153 3.289 13.153 15.548.009 9.118-4.475 13.156-8.811 14.651z"/><path d="m1.999 49.336h2.691v1.047c0 4.186 2.542 5.682 5.083 5.682 2.392 0 4.934-1.347 4.934-5.682v-17.193h-6.728v-2.392h9.42v19.734c0 5.979-3.887 8.073-7.625 8.073s-7.625-2.242-7.625-8.073v-1.2z"/><path d="m39.075 49.336h-11.063l-3.14 8.671h-2.84l10.017-27.359h2.841l10.016 27.359h-2.841zm-5.532-15.7s-.6 2.243-1.047 3.588l-3.588 9.867h9.424l-3.588-9.867c-.6-1.346-1.047-3.588-1.201-3.588z"/><path d="m50.288 30.798h2.691v12.409h15.847v-12.409h2.691v27.359h-2.691v-12.409h-16v12.409h-2.538z"/><path d="m80.039 30.798h2.542l14.053 19.585c.9 1.346 2.243 3.738 2.243 3.738h.15c-.165-1.24-.265-2.488-.3-3.738v-19.585h2.691v27.359h-2.542l-13.9-19.734c-.9-1.346-2.243-3.738-2.243-3.738h-.149c.165 1.24.265 2.488.3 3.738v19.734h-2.695v-27.359z"/><path d="m110.089 30.798h15.4v2.392h-12.709v10.017h10.316v2.391h-10.316v10.168h13.455v2.394h-16.146z"/><path d="m132.962 30.798h2.691v24.968h12.709v2.394h-15.4z"/><path d="m274.989 30.648c3.506-.116 6.942.994 9.718 3.14l-1.495 2.093c-2.369-1.779-5.261-2.725-8.223-2.691-6.578 0-11.063 5.083-11.063 11.512 0 6.728 4.635 11.661 10.914 11.661 3.287-.068 6.389-1.537 8.521-4.037v-4.485h-4.635v-2.393h7.176v13.007h-2.391v-3.289c-2.346 2.436-5.594 3.788-8.973 3.738-7.477 0-13.309-5.98-13.309-14.2-.197-7.56 5.768-13.851 13.326-14.051.148-.004.291-.006.434-.005z"/><path d="m295.62 31.246h8.073c1.729-.125 3.463.13 5.083.748 2.671 1.298 4.313 4.06 4.186 7.027 0 3.738-2.093 6.579-5.233 7.327v.149c.287.321.537.672.747 1.047l5.98 11.063h-3.136l-6.131-11.512h-6.877v11.51h-2.692zm9.269 13.306c3.289 0 5.385-2.093 5.385-5.532.146-1.952-.845-3.813-2.545-4.784-.745-.449-1.793-.6-3.887-.6h-5.531v11.065h6.578z"/><path d="m335.235 30.648c7.609-.065 13.835 6.053 13.897 13.665.001.079.001.157 0 .235.253 7.679-5.768 14.108-13.446 14.36s-14.106-5.768-14.358-13.446c-.01-.305-.01-.609 0-.914-.065-7.612 6.053-13.835 13.665-13.9.08-.001.161-.001.242 0zm0 25.864c6.13 0 11.062-5.082 11.062-11.811.247-6.11-4.507-11.263-10.616-11.509-6.108-.247-11.264 4.507-11.51 10.617-.012.297-.012.595 0 .893.005 6.728 4.938 11.81 11.064 11.81z"/><path d="m358.112 31.246h2.688v17.791c0 4.635 2.99 7.475 7.774 7.475 4.635 0 7.771-2.841 7.771-7.625v-17.641h2.691v17.791c0 6.13-4.188 10.018-10.465 10.018-6.279 0-10.465-3.889-10.465-10.018v-17.791z"/><path d="m389.657 31.246h9.419c4.934 0 8.372 3.14 8.372 8.223.21 4.414-3.197 8.162-7.61 8.372-.254.013-.508.013-.762 0h-6.729v10.765h-2.688zm9.12 14.2c3.066.234 5.746-2.064 5.979-5.134.021-.282.021-.564 0-.846 0-3.738-2.392-5.831-5.979-5.831h-6.432v11.811z"/></g></svg>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#what-you-get">What You Get</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://www.jahnelgroup.com/contact" class="nav-cta">Book Your Free POC</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container hero-content">
+    <div class="section-label reveal">AI-Powered Solutions for Growing Businesses</div>
+    <h1 class="reveal reveal-delay-1">Your Team Is Buried in Manual Work.<br><span class="gradient">AI Can Fix That.</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">Custom AI-powered automations, integrations, and dashboards &mdash; built for your business, delivered every month, starting with a free proof of concept.</p>
+    <p class="hero-supporting reveal reveal-delay-2">Starting at $5,000/month &mdash; for a fraction of the cost of hiring your own development team.</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-primary">Get Your Free Proof of Concept</a>
+      <a href="#pricing" class="btn btn-secondary">See Pricing</a>
+    </div>
+    <div class="trust-strip reveal reveal-delay-4">
+      <span>13 Years in Business</span><span class="dot">&middot;</span>
+      <span>150+ Team Members</span><span class="dot">&middot;</span>
+      <span>No Cost to Start</span><span class="dot">&middot;</span>
+      <span>Cancel Anytime</span>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="reveal">From First Conversation to Working Solution in Days</h2>
+    <p class="section-sub reveal">We start every engagement with a free proof of concept. No contracts, no cost, no strings attached.</p>
+    <div class="steps-grid">
+      <div class="card step-card reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <h3>Discovery Session</h3>
+        <div class="step-badge">Complimentary</div>
+        <p>We meet with your team to understand your business, identify pain points, and pinpoint the highest-impact automation opportunity.</p>
+      </div>
+      <div class="card step-card reveal reveal-delay-2">
+        <div class="step-number">02</div>
+        <h3>Free Proof of Concept</h3>
+        <div class="step-badge">$0 Investment</div>
+        <p>Within days, we build a working prototype specific to your business &mdash; at no cost. You see exactly what we can do before you spend a dollar.</p>
+      </div>
+      <div class="card step-card reveal reveal-delay-3">
+        <div class="step-number">03</div>
+        <h3>Monthly Delivery Plan</h3>
+        <div class="step-badge">Cancel Anytime</div>
+        <p>Love the results? Choose a monthly delivery plan that fits. We continuously build, improve, and support your solutions month after month.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-cyan">Get Your Free Proof of Concept</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="what-you-get">
+  <div class="container">
+    <div class="section-label reveal">What You Get</div>
+    <h2 class="reveal">Solutions That Work as Hard as Your Team</h2>
+    <p class="section-sub reveal">Every month, your plan delivers real, working tools with AI built in &mdash; not slide decks or strategy documents. We help you adopt AI responsibly and in a way that can transform your business.</p>
+    <div class="deliverables-grid">
+      <div class="card deliverable-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="20" x2="12" y2="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="20" x2="6" y2="14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI-Powered Data &amp; Reporting</h3>
+        <p>Transform, migrate, and visualize your data with AI-powered reporting pipelines that surface insights automatically.</p>
+      </div>
+      <div class="card deliverable-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="21" x2="9" y2="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Intelligent Dashboards</h3>
+        <p>Real-time, AI-enhanced reporting and visibility into the metrics that matter to your business.</p>
+      </div>
+      <div class="card deliverable-card reveal reveal-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI Workflow Automation</h3>
+        <p>Replace manual data entry, copy-paste routines, and repetitive handoffs with intelligent, AI-driven automation.</p>
+      </div>
+      <div class="card deliverable-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="12" x2="22" y2="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Integrations &amp; MCP Servers</h3>
+        <p>Connect your CRM, accounting, marketing, and operations platforms so data flows automatically.</p>
+      </div>
+      <div class="card deliverable-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Smart Alerts &amp; Notifications</h3>
+        <p>Automated alerts when deals stall, thresholds are hit, tasks go overdue, or data looks off.</p>
+      </div>
+      <div class="card deliverable-card reveal reveal-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="17" x2="8" y2="17" stroke-linecap="round" stroke-linejoin="round"/><polyline points="10 9 9 9 8 9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AI Business Tools</h3>
+        <p>Purpose-built tools tailored to how your team works &mdash; lead trackers, approval systems, intake forms &mdash; all with AI baked in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY JAHNEL GROUP -->
+<section id="why-jahnel-group">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal">The Advantage</div>
+      <h2 class="reveal">One Subscription. Dozens of Solutions.</h2>
+      <p class="section-sub reveal">We don't just build with AI &mdash; we help you leverage AI across your business. Every solution we deliver is designed to help your team adopt AI responsibly and unlock real transformation.</p>
+    </div>
+    <div class="advantage-grid">
+      <div class="value-blocks">
+        <div class="value-block reveal reveal-delay-1">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>A Fraction of the Cost</h3>
+            <p>Hiring your own development team costs a fortune. Our plans start at $5,000/month and deliver comparable output through AI-accelerated development &mdash; without the overhead.</p>
+          </div>
+        </div>
+        <div class="value-block reveal reveal-delay-2">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>No Hiring, No Overhead</h3>
+            <p>Skip the recruiting, onboarding, benefits, and management. Get a productive team from day one.</p>
+          </div>
+        </div>
+        <div class="value-block reveal reveal-delay-3">
+          <div class="vb-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 6 23 6 23 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>Deepening Expertise</h3>
+            <p>Your dedicated team member learns your business over time and proactively suggests improvements &mdash; like having an in-house developer without the in-house cost.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cost-card reveal reveal-delay-2">
+        <div class="section-label">Cost Comparison</div>
+        <div class="cost-row">
+          <span class="label">Full-Time Developer</span>
+          <span class="price-old">$24,000/mo</span>
+        </div>
+        <div class="cost-row">
+          <span class="label">Jahnel Group Starter</span>
+          <span class="price-new">$5,000/mo</span>
+        </div>
+        <div class="cost-bottom">Up to 80% less than traditional hiring</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="reveal">Simple, Predictable Pricing</h2>
+    <p class="section-sub reveal">Choose the plan that fits your needs. Upgrade, downgrade, or cancel anytime.</p>
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="card pricing-card reveal reveal-delay-1">
+        <h3>Starter</h3>
+        <div class="pricing-price"><span class="amount">$5,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$60,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 2 solutions/month</li>
+          <li>48-hour response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Monthly strategy call</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-secondary">Get Started</a>
+      </div>
+      <!-- Growth -->
+      <div class="card pricing-card featured reveal reveal-delay-2">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Growth</h3>
+        <div class="pricing-price"><span class="amount">$8,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$96,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 4 solutions/month</li>
+          <li>24-hour response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-cyan">Get Started</a>
+      </div>
+      <!-- Scale -->
+      <div class="card pricing-card reveal reveal-delay-3">
+        <h3>Scale</h3>
+        <div class="pricing-price"><span class="amount">$12,000</span><span class="period">/month</span></div>
+        <div class="pricing-annual">$144,000/year</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 6 solutions/month</li>
+          <li>Same-day response time</li>
+          <li>Dedicated team member</li>
+          <li>Client portal access</li>
+          <li>Weekly strategy calls</li>
+          <li>Concurrent workstreams</li>
+          <li>Proactive recommendations</li>
+        </ul>
+        <a href="https://www.jahnelgroup.com/contact" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-wrapper reveal">
+      <table class="comparison-table">
+        <caption class="sr-only">Feature comparison across Starter, Growth, and Scale plans</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Starter</th>
+            <th scope="col" class="highlight">Growth</th>
+            <th scope="col">Scale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly Investment</td>
+            <td>$5,000</td>
+            <td>$8,000</td>
+            <td>$12,000</td>
+          </tr>
+          <tr>
+            <td>Solutions per Month</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Response Time</td>
+            <td>48 hours</td>
+            <td>24 hours</td>
+            <td>Same day</td>
+          </tr>
+          <tr>
+            <td>Strategy Cadence</td>
+            <td>Monthly</td>
+            <td>Bi-weekly</td>
+            <td>Weekly</td>
+          </tr>
+          <tr>
+            <td>Dedicated Team Member</td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Client Portal</td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Priority Support</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Concurrent Workstreams</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Proactive Recommendations</td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="dash">&mdash;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="comparison-note reveal">All plans include a free proof of concept. No long-term contracts required.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">About Jahnel Group</div>
+    <h2 class="reveal">Built on 13 Years of Delivery Excellence</h2>
+    <p class="section-sub reveal">The AI Solutions Division is powered by Jahnel Group, a proven software development firm trusted by organizations of all sizes.</p>
+    <div class="stats-grid">
+      <div class="card stat-card reveal reveal-delay-1">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="card stat-card reveal reveal-delay-2">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="card stat-card reveal reveal-delay-3">
+        <div class="stat-number">4&ndash;5x</div>
+        <div class="stat-label">Output vs. Traditional Dev</div>
+      </div>
+    </div>
+    <p class="about-text reveal">We've spent over a decade building custom software for enterprise clients. Our AI Solutions Division applies that same rigor and reliability to a new model: subscription-based AI development that makes custom solutions accessible to growing businesses for the first time.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label reveal">FAQ</div>
+    <h2 class="reveal">Common Questions</h2>
+    <p class="section-sub reveal">&nbsp;</p>
+    <div class="faq-list">
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question">
+          <h3>What exactly is the free proof of concept?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We start every engagement with discovery sessions to understand your business, your tools, and where you're losing time. Then we build a working prototype that solves a real problem &mdash; at no cost to you. If it's not a fit, you walk away with a free solution and zero obligation.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question">
+          <h3>What kinds of businesses is this for?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We work with small and mid-sized businesses &mdash; typically 20 to 500 employees &mdash; across a range of industries. If your team relies on SaaS tools, deals with manual data entry, or has workflows that feel like they should be automated, this is built for you.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question">
+          <h3>How is this different from hiring a developer?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Hiring your own development team takes time to recruit, onboard, and manage &mdash; and the costs add up fast. Our model gives you a dedicated team member, continuous monthly delivery, and AI-accelerated speed &mdash; all for a predictable monthly plan at a fraction of the cost.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question">
+          <h3>Can I change plans or cancel?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. You can upgrade, downgrade, or cancel at any time. There are no long-term contracts. We earn your business every month.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question">
+          <h3>What tools do you integrate with?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We work with the platforms you already use &mdash; QuickBooks, HubSpot, Salesforce, Slack, Google Workspace, and many more.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question">
+          <h3>What if I'm not sure where to start?</h3>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>That's exactly what the free proof of concept is for. During discovery, we help you identify the highest-impact opportunities. You don't need a roadmap before you call us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-footer">
+  <div class="container">
+    <h2 class="reveal">Let's Find Your Highest-Value Automation &mdash; For Free</h2>
+    <p class="reveal reveal-delay-1">Book a discovery session and we'll build a working proof of concept for your business at no cost. No pitch deck. No pressure. Just a real solution.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="https://www.jahnelgroup.com/contact" class="btn btn-primary">Start Your Free Proof of Concept</a>
+    </div>
+    <div class="domain reveal reveal-delay-3">jahnelgroup.com</div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER BAR -->
+<footer class="footer-bar">
+  <div class="container">&copy; 2026 Jahnel Group. All rights reserved.</div>
+</footer>
+
+<script>
+// Intersection Observer for reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// Mobile nav toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const wasActive = item.classList.contains('active');
+    // Close all
+    document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+    // Open clicked if it wasn't active
+    if (!wasActive) item.classList.add('active');
+  });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = nav.offsetHeight + 20;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// Hero parallax
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const hero = document.querySelector('.hero');
+  let ticking = false;
+  function updateHeroParallax() {
+    const scrollY = window.scrollY;
+    if (scrollY > hero.offsetHeight * 1.2) { ticking = false; return; }
+    hero.style.setProperty('--parallax-grid', scrollY * 0.4 + 'px');
+    hero.style.setProperty('--parallax-glow', scrollY * 0.6 + 'px');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateHeroParallax); ticking = true; }
+  }, { passive: true });
+})();
+
+// Stat counter animation
+(function() {
+  const statCards = document.querySelectorAll('.stat-number');
+  let animated = false;
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+  function animateCounter(el) {
+    const text = el.textContent.trim();
+    const match = text.match(/^(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1], 10);
+    const suffix = text.replace(/^\d+/, '');
+    const duration = 1500;
+    const startTime = performance.now();
+    el.textContent = '0' + suffix;
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.round(target * easeOutQuart(progress));
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        statCards.forEach(el => animateCounter(el));
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  statCards.forEach(el => statsObserver.observe(el));
+})();
+
+// Card tilt effect
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const cards = document.querySelectorAll('.deliverable-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 3;
+      const rotateX = ((rect.height / 2 - y) / (rect.height / 2)) * 3;
+      card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+// CTA glow parallax
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+  const ctaSection = document.querySelector('.cta-footer');
+  let ticking = false;
+  function updateCtaGlow() {
+    const rect = ctaSection.getBoundingClientRect();
+    const vh = window.innerHeight;
+    if (rect.bottom < 0 || rect.top > vh) { ticking = false; return; }
+    const progress = Math.max(0, Math.min(1, 1 - (rect.top / vh)));
+    ctaSection.style.setProperty('--cta-glow-y', (20 - progress * 40) + 'px');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateCtaGlow); ticking = true; }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
