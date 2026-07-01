@@ -384,6 +384,37 @@ section { padding: 120px 0; }
 .deliverable-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .deliverable-card p { color: #999; font-size: 0.92rem; font-weight: 300; }
 
+/* Capability categories */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  text-align: left;
+}
+.capability-card .icon { width: 44px; height: 44px; margin-bottom: 18px; }
+.capability-card .icon svg { width: 44px; height: 44px; stroke: #00BDFF; stroke-width: 1.5; fill: none; }
+.capability-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.capability-card .cap-intro { color: #999; font-size: 0.92rem; font-weight: 300; margin-bottom: 18px; }
+.cap-list { list-style: none; }
+.cap-list li {
+  position: relative;
+  padding: 9px 0 9px 30px;
+  color: #ccc;
+  font-size: 0.92rem;
+  font-weight: 300;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.cap-list li:first-child { border-top: none; }
+.cap-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2300BDFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+}
+
 /* ============ WHY JAHNEL GROUP ============ */
 #why-jahnel-group {
   background: rgba(255,255,255,0.015);
@@ -589,6 +620,56 @@ section { padding: 120px 0; }
   font-style: italic;
   margin-top: 16px;
 }
+
+/* ============ OWN, DON'T RENT (KILL SAAS) ============ */
+#own-dont-rent { text-align: center; }
+.saas-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+.saas-col {
+  text-align: left;
+  border-radius: 16px;
+  padding: 36px 32px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.saas-rent { background: rgba(255,255,255,0.02); }
+.saas-own {
+  background: #1e2024;
+  border-left: 3px solid #00BDFF;
+  box-shadow: 0 0 40px rgba(0,189,255,0.06);
+}
+.saas-col h3 { font-size: 1.25rem; margin-bottom: 12px; }
+.saas-col ul { list-style: none; }
+.saas-col li {
+  position: relative;
+  padding: 12px 0 12px 32px;
+  color: #ccc;
+  font-size: 0.95rem;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.saas-col li:last-child { border-bottom: none; }
+.saas-col li::before {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.saas-rent li::before { content: '\2715'; color: #d15b5b; }
+.saas-own li::before { content: '\2713'; color: #00BDFF; }
+.saas-example {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #ccc;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.saas-example em { color: #00BDFF; font-style: normal; font-weight: 600; }
 
 /* ============ HOW WE WORK (FDE MODEL) ============ */
 #how-we-work { text-align: center; }
@@ -839,8 +920,10 @@ section { padding: 120px 0; }
 
   .steps-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
   .deliverables-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .capability-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
   .workstream-flow { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
   .guarantee-banner { border-radius: 16px; }
+  .saas-compare { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
   .advantage-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -1003,37 +1086,51 @@ section { padding: 120px 0; }
   <div class="container">
     <div class="section-label reveal">What You Get</div>
     <h2 class="reveal">Solutions That Work as Hard as Your Team</h2>
-    <p class="section-sub reveal">Every month, your plan delivers real, working tools with AI built in &mdash; not slide decks or strategy documents. We help you adopt AI responsibly and in a way that can transform your business.</p>
-    <div class="deliverables-grid">
-      <div class="card deliverable-card reveal reveal-delay-1">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="20" x2="12" y2="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="20" x2="6" y2="14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>AI-Powered Data &amp; Reporting</h3>
-        <p>Transform, migrate, and visualize your data with AI-powered reporting pipelines that surface insights automatically.</p>
+    <p class="section-sub reveal">Every month, your plan delivers real, working software with AI built in &mdash; not slide decks or strategy documents. Whatever your business needs built, it likely falls into one of these four areas.</p>
+    <div class="capability-grid">
+      <div class="card capability-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="22.08" x2="12" y2="12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Build What You Can't Buy</h3>
+        <p class="cap-intro">Custom software shaped to your business &mdash; not rented, not one-size-fits-all.</p>
+        <ul class="cap-list">
+          <li>Custom apps that replace per-seat SaaS &mdash; CRMs, portals, project trackers</li>
+          <li>Purpose-built internal tools &mdash; approvals, intake forms, lead trackers</li>
+          <li>Legacy system modernization &amp; data migration</li>
+        </ul>
       </div>
-      <div class="card deliverable-card reveal reveal-delay-2">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="21" x2="9" y2="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Intelligent Dashboards</h3>
-        <p>Real-time, AI-enhanced reporting and visibility into the metrics that matter to your business.</p>
+      <div class="card capability-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9" width="6" height="6" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="1" x2="9" y2="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="15" y1="1" x2="15" y2="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="20" x2="9" y2="23" stroke-linecap="round" stroke-linejoin="round"/><line x1="15" y1="20" x2="15" y2="23" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="9" x2="23" y2="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="14" x2="23" y2="14" stroke-linecap="round" stroke-linejoin="round"/><line x1="1" y1="9" x2="4" y2="9" stroke-linecap="round" stroke-linejoin="round"/><line x1="1" y1="14" x2="4" y2="14" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Put AI to Work</h3>
+        <p class="cap-intro">Agents and copilots that do real work across your systems.</p>
+        <ul class="cap-list">
+          <li>Domain-specific AI agents &amp; copilots that take action on your data</li>
+          <li>Customer-facing AI &mdash; support, lead qualification, intake</li>
+          <li>"Chat with your docs" knowledge bases over your SOPs and wikis</li>
+          <li>Voice &amp; phone AI agents for calls, scheduling, and dispatch</li>
+        </ul>
       </div>
-      <div class="card deliverable-card reveal reveal-delay-3">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>AI Workflow Automation</h3>
-        <p>Replace manual data entry, copy-paste routines, and repetitive handoffs with intelligent, AI-driven automation.</p>
+      <div class="card capability-card reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Automate the Busywork</h3>
+        <p class="cap-intro">Replace manual, repetitive work with intelligent automation.</p>
+        <ul class="cap-list">
+          <li>AI workflow automation &amp; repetitive handoffs</li>
+          <li>Document intelligence &mdash; invoices, contracts, forms, PDFs</li>
+          <li>Quote, proposal &amp; contract generation</li>
+          <li>Smart alerts &amp; notifications when something needs attention</li>
+          <li>Integrations &amp; MCP servers across your entire stack</li>
+        </ul>
       </div>
-      <div class="card deliverable-card reveal reveal-delay-1">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><line x1="2" y1="12" x2="22" y2="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Integrations &amp; MCP Servers</h3>
-        <p>Connect your CRM, accounting, marketing, and operations platforms so data flows automatically.</p>
-      </div>
-      <div class="card deliverable-card reveal reveal-delay-2">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Smart Alerts &amp; Notifications</h3>
-        <p>Automated alerts when deals stall, thresholds are hit, tasks go overdue, or data looks off.</p>
-      </div>
-      <div class="card deliverable-card reveal reveal-delay-3">
-        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="17" x2="8" y2="17" stroke-linecap="round" stroke-linejoin="round"/><polyline points="10 9 9 9 8 9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>AI Business Tools</h3>
-        <p>Purpose-built tools tailored to how your team works &mdash; lead trackers, approval systems, intake forms &mdash; all with AI baked in.</p>
+      <div class="card capability-card reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 6 23 6 23 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>See Your Business Clearly</h3>
+        <p class="cap-intro">Turn scattered data into real-time insight and foresight.</p>
+        <ul class="cap-list">
+          <li>Intelligent, real-time dashboards</li>
+          <li>AI-powered data pipelines &amp; reporting</li>
+          <li>Predictive analytics &amp; forecasting</li>
+          <li>Compliance &amp; audit automation</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1123,6 +1220,40 @@ section { padding: 120px 0; }
         <div class="cost-bottom">Up to 80% less than traditional hiring</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- OWN, DON'T RENT -->
+<section id="own-dont-rent">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal">Own, Don't Rent</div>
+      <h2 class="reveal">Stop Paying Rent on Software That Doesn't Fit</h2>
+      <p class="section-sub reveal">Every month you pour thousands into SaaS platforms &mdash; per seat, per feature, per add-on &mdash; and still end up bending your business to fit their software. We flip that: custom solutions built around your workflows, that you actually own.</p>
+    </div>
+    <div class="saas-compare">
+      <div class="saas-col saas-rent reveal reveal-delay-1">
+        <h3>Renting Off-the-Shelf SaaS</h3>
+        <ul>
+          <li>Thousands per month, forever &mdash; and the price climbs at renewal</li>
+          <li>Paying for seats and features you'll never use</li>
+          <li>Bending your process to fit their software</li>
+          <li>Your data locked inside someone else's platform</li>
+          <li>Every integration and add-on costs extra</li>
+        </ul>
+      </div>
+      <div class="saas-col saas-own reveal reveal-delay-2">
+        <h3>Owning Your Custom Solution</h3>
+        <ul>
+          <li>One predictable subscription that builds real, owned assets</li>
+          <li>Only the features your business actually needs</li>
+          <li>Built around your workflows, not the other way around</li>
+          <li>Your software and your data stay yours</li>
+          <li>Integrations included &mdash; wired into the tools you already run</li>
+        </ul>
+      </div>
+    </div>
+    <p class="saas-example reveal">Why pay for Salesforce seats you barely touch? We'll build you a custom CRM wrapped around <em>your</em> pipeline, <em>your</em> workflows, and <em>your</em> data &mdash; then connect it to everything else you run. Same for the project trackers, portals, and dashboards you're overpaying for today.</p>
   </div>
 </section>
 
